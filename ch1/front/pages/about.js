@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Home = () => {
+const About = () => {
     return(
         <>
         <div>About!</div>
@@ -9,4 +9,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default About;
