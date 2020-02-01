@@ -52,6 +52,16 @@ const Signup = () => {
         setTerm(e.target.checked);
     }
 
+    const useInput = (initValue = null) => {
+        const [value,setter] = useState(initValue)
+        const handler =(e) => {
+            setter(e.target.value)
+        }
+        return [value, handler]
+    }
+
+    const [id, onChangeId] = useInput('')
+
     return <>
     <Head>
             <title>NodeSNS</title>
