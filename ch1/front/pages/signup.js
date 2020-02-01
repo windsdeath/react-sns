@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState} from 'react';
 import AppLayout from '../components/AppLayout';
 import Head from 'next/head';
 import { Form,Input, Checkbox, Button } from 'antd';
@@ -13,7 +13,22 @@ const Signup = () => {
     const [passwordError, setPasswordError] = useState(false)
     const [termError, setTermError] = useState(false)
 
-
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if (password !== passwordCheck) {
+            return setPasswordError(true);
+        }
+        if (!term) {
+            return setTermError(true);
+        }
+        console.log({
+            id,
+            nick,
+            password,
+            passwordCheck,
+            term
+        })
+    }
 
     const onChangeId = (e) => {
         setId(e.target.value);
@@ -26,39 +41,35 @@ const Signup = () => {
     const onChangePassword = (e) => {
         setPassword(e.target.value);
     }
-    const onSubmit = useCallback((e) => {
-        e.preventDefault();
-        if (password !== passwordCheck) {
-            return setPasswordError(true);
-        }
-        if (!term) {
-            return setTermError(true);
-        }
-    }, [password, passwordCheck, term])
 
-    const onChangePasswordCheck = useCallback((e) => {
+    const onChangePasswordCheck = (e) => {
         setPasswordError(e.target.value !== password);
         setPasswordCheck(e.target.value);
-    },[password])
+    }
     
-    
-    const onChangeTerm = useCallback((e) => {
+    const onChangeTerm = (e) => {
         setTermError(false);
         setTerm(e.target.checked);
-    },[])
-    // costom Hook
-    const useInput = (initValue = null) => {
-        const [value,setter] = useState(initValue)
-        const handler =useCallback((e) => {
-            setter(e.target.value)
-        },[])
-        return [value, handler]
     }
+    // costom Hook
+    // const useInput = (initValue = null) => {
+    //     const [value,setter] = useState(initValue)
+    //     const handler =(e) => {
+    //         setter(e.target.value)
+    //     }
+    //     return [value, handler]
+    // }
 
     // const [id, onChangeId] = useInput('')
 
     return <>
-        <Form onSubmit={onSubmit} style={{ paddingLeft:"30vw",paddingRight:"30vw" }}>
+    <Head>
+            <title>NodeSNS</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.26.7/antd.css" />
+        </Head>
+    
+    <AppLayout>
+        <Form onSubmit={onSubmit} style={{ padding:"30vw" }}>
             <div>
                 <label htmlFor="user-id">아이디</label>
                 <br />
@@ -79,8 +90,7 @@ const Signup = () => {
                 {passwordError && <div style={{color:"red"}}>비밀번호가 일치하지 않습니다.</div>}
             </div>
             <div>
-            {/* value={term} 아랫줄 체크박스 안에넣으면 콘솔 에러남 -> value를 checked로 변경  */}
-                <Checkbox name="user-term" checked={term} onChange={onChangeTerm}>약관에 동의합니다.</Checkbox>
+                <Checkbox name="user-term" onChange={onChangeTerm}>약관에 동의합니다.</Checkbox>
                 {termError && <div style={{color:"red"}}>약관에 동의하셔야합니다.</div>}
             </div>
             <div style={{marginTop:"10px"}}>
@@ -88,6 +98,10 @@ const Signup = () => {
             </div>
 
         </Form>
+    <div>
+        회원가입
+    </div>
+    </AppLayout>
     </>
 };
 
