@@ -1,7 +1,16 @@
 import React, {useState, useCallback} from 'react';
-import AppLayout from '../components/AppLayout';
-import Head from 'next/head';
 import { Form,Input, Checkbox, Button } from 'antd';
+import PropTypes from 'prop-types';
+
+const TextInput = ({ value }) => {
+    return(
+        <div>{value}</div>
+    )
+}
+
+TextInput.propTypes={
+    value:PropTypes.string,
+}
 
 const Signup = () => {
     
@@ -59,6 +68,7 @@ const Signup = () => {
 
     return <>
         <Form onSubmit={onSubmit} style={{ paddingLeft:"30vw",paddingRight:"30vw" }}>
+            <TextInput value={"135"} />
             <div>
                 <label htmlFor="user-id">아이디</label>
                 <br />

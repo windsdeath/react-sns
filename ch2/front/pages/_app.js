@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import AppLayout from '../components/AppLayout'
 //  아래의 Component는 next때문에 가능함
 const NodeSNS = ( {Component}) => {
@@ -14,6 +15,10 @@ const NodeSNS = ( {Component}) => {
             </AppLayout>
         </>
     );
+}
+
+NodeSNS.propTypes = {
+    Component: PropTypes.elementType,
 }
  
 export default NodeSNS;
