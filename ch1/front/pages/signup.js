@@ -51,16 +51,16 @@ const Signup = () => {
         setTermError(false);
         setTerm(e.target.checked);
     }
+    // costom Hook
+    // const useInput = (initValue = null) => {
+    //     const [value,setter] = useState(initValue)
+    //     const handler =(e) => {
+    //         setter(e.target.value)
+    //     }
+    //     return [value, handler]
+    // }
 
-    const useInput = (initValue = null) => {
-        const [value,setter] = useState(initValue)
-        const handler =(e) => {
-            setter(e.target.value)
-        }
-        return [value, handler]
-    }
-
-    const [id, onChangeId] = useInput('')
+    // const [id, onChangeId] = useInput('')
 
     return <>
     <Head>
