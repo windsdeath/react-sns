@@ -116,6 +116,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const dummy = {
+  nickname: 'SIPO',
+  Post: [],
+  Follwings: [],
+  Followers: []
+};
 
 const AppLayout = ({
   children
@@ -123,61 +129,61 @@ const AppLayout = ({
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 15
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"], {
     mode: "horizontal",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 16
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 17
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 17
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 17
     },
     __self: undefined
   }, "NodeSNS"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 18
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 18
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 18
     },
     __self: undefined
   }, "\uD504\uB85C\uD544"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "mail",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"].Search, {
@@ -187,29 +193,119 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 20
     },
     __self: undefined
-  }))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    xs: 8,
+    md: 6,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+    actions: [__jsx("div", {
+      key: "twit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: undefined
+    }, "\uD3EC\uC2A4\uD2B8", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: undefined
+    }), dummy.Post.length), __jsx("div", {
+      key: "following",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: undefined
+    }, "\uD314\uB85C\uC719", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: undefined
+    }), dummy.Follwings.length), __jsx("div", {
+      key: "follower",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: undefined
+    }, "\uD314\uB85C\uC6CC", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: undefined
+    }), dummy.Followers.length)],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Card"].Meta, {
+    avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Avatar"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: undefined
+    }, dummy.nickname[0]),
+    title: dummy.nickname,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 38
     },
     __self: undefined
-  }, "\uD68C\uC6D0\uAC00\uC785"))), children);
+  }, "\uD68C\uC6D0\uAC00\uC785")))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    xs: 8,
+    md: 12,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: undefined
+  }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    xs: 8,
+    md: 6,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, "\uC138\uBC88\uC9F8\uC904")));
 };
 
 AppLayout.propTypes = {

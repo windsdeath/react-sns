@@ -67,8 +67,7 @@ const Signup = () => {
     // const [id, onChangeId] = useInput('')
 
     return <>
-        <Form onSubmit={onSubmit} style={{ paddingLeft:"30vw",paddingRight:"30vw" }}>
-            <TextInput value={"135"} />
+        <Form onSubmit={onSubmit} >
             <div>
                 <label htmlFor="user-id">아이디</label>
                 <br />

@@ -1,7 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { Menu,Input, Button } from 'antd';
+import { Menu,Input, Button,Row,Col,Card,Avatar } from 'antd';
+
+const dummy ={
+    nickname: 'SIPO',
+    Post:[],
+    Follwings:[],
+    Followers:[],
+}
 
 const AppLayout= ({children})=>{
     return(
@@ -13,8 +20,26 @@ const AppLayout= ({children})=>{
                     <Input.Search enterButton style={{ verticalAlign: 'middle' }} />
                 </Menu.Item>
             </Menu>
-            <Link href="/signup"><a><Button>회원가입</Button></a></Link>
-            {children}
+          
+            <Row>
+                <Col xs={8} md={6}>
+                    <Card
+                        actions={[
+                            <div key="twit">포스트<br />{dummy.Post.length}</div>,
+                            <div key="following">팔로윙<br />{dummy.Follwings.length}</div>,
+                            <div key="follower">팔로워<br />{dummy.Followers.length}</div>,
+                        ]}
+                    >
+                        <Card.Meta
+                        avatar={<Avatar>{dummy.nickname[0]}</Avatar>}
+                        title={dummy.nickname}
+                        />
+                    </Card>
+                    <Link href="/signup"><a><Button>회원가입</Button></a></Link>
+                </Col>
+                <Col xs={8}md={12}>{children}</Col>
+                <Col xs={8}md={6}>세번째줄</Col>
+            </Row>
         </div>
     )
 }
