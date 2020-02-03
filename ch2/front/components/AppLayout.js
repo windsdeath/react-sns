@@ -5,12 +5,12 @@ import { Menu,Input, Row,Col,Card,Avatar } from 'antd';
 import LoginForm from '../pages/LoginForm';
 import LogedInCard from '../pages/Card';
 
-const dummy ={
+export const dummy ={
     nickname: 'SIPO',
     Post:[],
     Follwings:[],
     Followers:[],
-    isLoggedIn: false,
+    isLoggedIn: true,
 }
 
 const AppLayout= ({children})=>{

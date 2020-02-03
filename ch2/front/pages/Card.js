@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card,Avatar } from 'antd';
+import {dummy} from '../components/AppLayout';
 
 const LogedInCard = () => {
     return (
