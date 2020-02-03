@@ -1,16 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { Menu,Input, Row,Col,Card,Avatar } from 'antd';
-import LoginForm from '../pages/LoginForm';
-import LogedInCard from '../pages/Card';
+import { Menu,Input, Row,Col} from 'antd';
 
-export const dummy ={
+import LoginForm from '../components/LoginForm';
+// import userProfile from '..components/userProfile';
+// import PostCard from '../components/PostCard';
+// import Profile from '../pages/profile';
+
+export const appDummy ={
     nickname: 'SIPO',
     Post:[],
     Follwings:[],
     Followers:[],
-    isLoggedIn: true,
+    isLoggedIn: false,
 }
 
 const AppLayout= ({children})=>{
@@ -28,7 +31,7 @@ const AppLayout= ({children})=>{
           </Row>
             <Row gutter={[16, 16]}type="flex" justify="space-around" align="top" style={{margin:"1%"}}>
                 <Col xs={8} md={6}>
-                    {dummy.isLoggedIn ? <LogedInCard /> : <LoginForm />
+                    {appDummy.isLoggedIn ? <userProfile /> : <LoginForm />
 }
                 </Col>
                 <Col xs={8}md={12}>{children}</Col>
