@@ -104,18 +104,197 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/root/wsl_projects/react-sns/ch2/front/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+const dummy = {
+  isLoggedin: true,
+  imagePaths: [],
+  mainPosts: [{
+    User: {
+      id: 1,
+      nickname: "시포"
+    },
+    content: "첫번째 게시글",
+    img: 'http://wordpress.sipo.kr/wp-content/uploads/2020/01/web_logo.svg'
+  }]
+};
+
 const Home = () => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+  return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 19
     },
     __self: undefined
-  }, "Hello, Next!"));
+  }, dummy.isLoggedin && __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+    style: {
+      marginBottom: "20px"
+    },
+    encType: "multipart/form-data",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
+    maxLength: 140,
+    placeholder: "\uD2B9\uBCC4\uD55C \uC77C\uC744 \uAE30\uB85D\uD574\uC8FC\uC138\uC694",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, __jsx("input", {
+    type: "file",
+    multiple: true,
+    hidden: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    type: "primary",
+    style: {
+      float: 'right'
+    },
+    htmlType: "submit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "\uC9F9\uC9F9")), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }, dummy.imagePaths.map((v, i) => {
+    return __jsx("div", {
+      key: v,
+      style: {
+        display: 'inline-block'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: undefined
+    }, __jsx("img", {
+      src: 'http://localhost:3000/' + v,
+      style: {
+        width: '200px'
+      },
+      alt: v,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: undefined
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: undefined
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: undefined
+    }, "\uC81C\uAC70")));
+  }))), dummy.mainPosts.map(c => {
+    return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      key: +c.createdAt,
+      cover: c.img && __jsx("img", {
+        alt: "example",
+        src: c.img,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        },
+        __self: undefined
+      }),
+      actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+        type: "retweet",
+        key: "retweet",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        },
+        __self: undefined
+      }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+        type: "heart",
+        key: "heart",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: undefined
+      }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+        type: "message",
+        key: "message",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: undefined
+      }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+        type: "ellipsis",
+        key: "ellipsis",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: undefined
+      })],
+      extra: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: undefined
+      }, "\uD314\uB85C\uC6B0"),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: undefined
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
+      avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: undefined
+      }, c.User.nickname[0]),
+      title: c.User.nickname,
+      description: c.content,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53
+      },
+      __self: undefined
+    }));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -131,6 +310,17 @@ const Home = () => {
 
 module.exports = __webpack_require__(/*! /root/wsl_projects/react-sns/ch2/front/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "antd":
+/*!***********************!*\
+  !*** external "antd" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd");
 
 /***/ }),
 
