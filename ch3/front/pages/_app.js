@@ -7,7 +7,7 @@ import {Provider } from 'react-redux';
 
 import reducer from '../reducers';
 import { initialState } from '../reducers/user';
-import createStore from 'antd/lib/table/createStore';
+import { createStore, compose, applyMiddleware } from 'redux';
 
 const NodeSNS = ({ Component, store }) => {
   return (
@@ -29,7 +29,13 @@ NodeSNS.propTypes = {
 };
 
 export default withRedux((initialState, options) => {
-  const store = createStore(reducer, initialState);
+  const middlewares = [];
+  const enhancer = compose(
+    applyMiddleware(...middlewares), 
+    // 서버에서는 typeof windows !== 'undefined' 를 !options.isServer 로 대체해야 함
+    typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f,
+  )
+  const store = createStore(reducer, initialState, enhancer);
   // 여기에 스토어 커스터마이징
   return store;
 })(NodeSNS);

@@ -1421,8 +1421,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var antd_lib_table_createStore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! antd/lib/table/createStore */ "antd/lib/table/createStore");
-/* harmony import */ var antd_lib_table_createStore__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(antd_lib_table_createStore__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_8__);
 var _jsxFileName = "/root/wsl_projects/react-sns/ch3/front/pages/_app.js";
 
 
@@ -1484,7 +1484,12 @@ NodeSNS.propTypes = {
   store: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object
 };
 /* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default()(function (initialState, options) {
-  var store = antd_lib_table_createStore__WEBPACK_IMPORTED_MODULE_8___default()(_reducers__WEBPACK_IMPORTED_MODULE_6__["default"], initialState); // 여기에 스토어 커스터마이징
+  var middlewares = [];
+  var enhancer = Object(redux__WEBPACK_IMPORTED_MODULE_8__["compose"])(redux__WEBPACK_IMPORTED_MODULE_8__["applyMiddleware"].apply(void 0, middlewares), // 서버에서는 typeof windows !== 'undefined' 를 !options.isServer 로 대체해야 함
+  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : function (f) {
+    return f;
+  });
+  var store = Object(redux__WEBPACK_IMPORTED_MODULE_8__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_6__["default"], initialState, enhancer); // 여기에 스토어 커스터마이징
 
   return store;
 })(NodeSNS));
@@ -1869,12 +1874,14 @@ var reducer = function reducer() {
 /*!**************************!*\
   !*** ./reducers/user.js ***!
   \**************************/
-/*! exports provided: initialState, default */
+/*! exports provided: initialState, loginAction, logoutAction, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginAction", function() { return loginAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutAction", function() { return logoutAction; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
 var initialState = {
@@ -1886,7 +1893,7 @@ var LOG_OUT = 'LOG_OUT';
 var loginAction = {
   type: LOG_IN,
   data: {
-    nickcame: 'SIPO'
+    nickname: 'SIPO'
   }
 };
 var logoutAction = {
@@ -1945,17 +1952,6 @@ module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_
 /***/ (function(module, exports) {
 
 module.exports = require("antd");
-
-/***/ }),
-
-/***/ "antd/lib/table/createStore":
-/*!*********************************************!*\
-  !*** external "antd/lib/table/createStore" ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("antd/lib/table/createStore");
 
 /***/ }),
 

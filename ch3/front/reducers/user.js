@@ -6,14 +6,14 @@ export const initialState= {
 const LOG_IN = 'LOG_IN';
 const LOG_OUT = 'LOG_OUT';
 
-const loginAction = {
+export const loginAction = {
   type: LOG_IN,
   data: {
-    nickcame: 'SIPO',
+    nickname: 'SIPO',
   },
 };
 
-const logoutAction = {
+export const logoutAction = {
   type:LOG_OUT,
 }
 
