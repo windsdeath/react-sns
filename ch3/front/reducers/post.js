@@ -26,6 +26,11 @@ const reducer = (state = initialState, action) => {
           mainPosts: [action.data, ...state.mainPosts],
         }
       }
+      default: {
+        return{
+          ...state,
+        }
+      }
   }
 }
 
