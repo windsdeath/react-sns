@@ -1,5 +1,13 @@
 export const initialState = {
-  mainPosts: [],
+  imagePaths:{},
+  mainPosts: [{
+    User: {
+      id: 1,
+      nickname: 'SIPO',
+    },
+    content: '첫 번째 게시글',
+    img: 'http://wordpress.sipo.kr/wp-content/uploads/2020/01/web_logo.svg',
+  }],
 }
 
 const ADD_POST = 'ADD_POST';

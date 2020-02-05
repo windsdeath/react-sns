@@ -6,7 +6,7 @@ import AppLayout from '../components/AppLayout';
 import {Provider } from 'react-redux';
 
 import reducer from '../reducers';
-import { initialState } from '../reducers/user';
+// import { initialState } from '../reducers/user';
 import { createStore, compose, applyMiddleware } from 'redux';
 
 const NodeSNS = ({ Component, store }) => {
