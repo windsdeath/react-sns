@@ -1,9 +1,15 @@
-import { Avatar, Card } from 'antd';
-import React from 'react';
-import {useSelector} from 'react-redux'
+import { Avatar, Card, Button } from 'antd';
+import React, { useCallback } from 'react';
+import {useSelector, useDispatch} from 'react-redux'
+import {logoutAction} from '../reducers/user'
 
 const UserProfile = () => {
   const {user} = useSelector(state => state.user)
+  const dispatch = useDispatch()
+
+  const onLogout = useCallback(() => {
+    dispatch(logoutAction)
+  },[]) 
 
   return (
     <Card
@@ -17,6 +23,7 @@ const UserProfile = () => {
         avatar={<Avatar>{user.nickname[0]}</Avatar>}
         title={user.nickname}
       />
+      <Button onClick={onLogout}>로그아웃</Button>
     </Card>
   );
 };
