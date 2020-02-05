@@ -8,10 +8,10 @@ function* loginAPI(){
 function* login(){
     try {
         yield call(loginAPI)
-        yield put({
+        yield put({ //put은 dispatch와 동일
             type:LOG_IN_SUCCESS
         })
-    } catch (e){
+    } catch (e){ //loginAPI 실패
         console.log(e);
         yield put({
             type:LOG_IN_FAILURE
