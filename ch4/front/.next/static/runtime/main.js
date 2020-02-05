@@ -7435,7 +7435,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "/root/wsl_projects/react-sns/ch3/front/.next");
+      source_map_support_1.rewriteStacktrace(error, "/root/wsl_projects/react-sns/ch4/front/.next");
       return error;
     }
   };
