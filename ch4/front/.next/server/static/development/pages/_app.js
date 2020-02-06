@@ -1934,18 +1934,22 @@ var reducer = function reducer() {
 /*!**************************!*\
   !*** ./reducers/user.js ***!
   \**************************/
-/*! exports provided: initialState, SIGN_UP, SIGN_UP_SUCCESS, LOG_IN, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT, signUpSuccess, signUpAction, loginAction, logoutAction, default */
+/*! exports provided: initialState, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, INCREMENT_NUMBER, signUpSuccess, signUpAction, loginAction, logoutAction, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP", function() { return SIGN_UP; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_SUCCESS", function() { return SIGN_UP_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN", function() { return LOG_IN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_REQUEST", function() { return LOG_IN_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_SUCCESS", function() { return LOG_IN_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_FAILURE", function() { return LOG_IN_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT", function() { return LOG_OUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_REQUEST", function() { return SIGN_UP_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_SUCCESS", function() { return SIGN_UP_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_FAILURE", function() { return SIGN_UP_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_REQUEST", function() { return LOG_OUT_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_SUCCESS", function() { return LOG_OUT_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_FAILURE", function() { return LOG_OUT_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INCREMENT_NUMBER", function() { return INCREMENT_NUMBER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signUpSuccess", function() { return signUpSuccess; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signUpAction", function() { return signUpAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginAction", function() { return loginAction; });
@@ -1967,12 +1971,16 @@ var initialState = {
     password: ''
   }
 };
-var SIGN_UP = 'SIGN_UP';
-var SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
-var LOG_IN = 'LOG_IN';
+var LOG_IN_REQUEST = 'LOG_IN_REQUEST';
 var LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 var LOG_IN_FAILURE = 'LOG_IN_FAILURE';
-var LOG_OUT = 'LOG_OUT';
+var SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
+var SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+var SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+var LOG_OUT_REQUEST = 'LOG_OUT_REQUEST';
+var LOG_OUT_SUCCESS = 'LOG_OUT_REQUEST';
+var LOG_OUT_FAILURE = 'LOG_OUT_REQUEST';
+var INCREMENT_NUMBER = '';
 var signUpSuccess = function signUpSuccess(data) {
   return {
     type: SIGN_UP_SUCCESS
@@ -1980,15 +1988,15 @@ var signUpSuccess = function signUpSuccess(data) {
 };
 var signUpAction = function signUpAction(data) {
   return {
-    type: SIGN_UP,
+    type: SIGN_UP_REQUEST,
     data: data
   };
 };
 var loginAction = {
-  type: LOG_IN
+  type: LOG_IN_REQUEST
 };
 var logoutAction = {
-  type: LOG_OUT
+  type: LOG_OUT_REQUEST
 };
 
 var reducer = function reducer() {
@@ -1996,7 +2004,7 @@ var reducer = function reducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case LOG_IN:
+    case LOG_IN_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isloggedIn: true,
@@ -2004,15 +2012,23 @@ var reducer = function reducer() {
         });
       }
 
-    case LOG_OUT:
+    case LOG_IN_SUCCESS:
+      {
+        return {
+          isLoading: false
+        };
+      }
+
+    case LOG_OUT_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isloggedIn: false,
-          user: null
+          user: null,
+          isLoading: ture
         });
       }
 
-    case SIGN_UP:
+    case SIGN_UP_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           signUpData: action.data
@@ -2180,7 +2196,7 @@ function login() {
         case 0:
           _context2.prev = 0;
           _context2.next = 3;
-          return call(loginAPI);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(loginAPI);
 
         case 3:
           _context2.next = 5;
@@ -2217,7 +2233,7 @@ function watchLogin() {
       switch (_context3.prev = _context3.next) {
         case 0:
           _context3.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN"], login);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_REQUEST"], login);
 
         case 2:
         case "end":

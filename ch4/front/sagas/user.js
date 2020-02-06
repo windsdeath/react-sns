@@ -1,5 +1,5 @@
-import {all, fork, put,takeEvery, takeLatest,delay, take} from 'redux-saga/effects';
-import { LOG_IN, LOG_IN_SUCCESS,LOG_IN_FAILURE } from '../reducers/user'
+import {all, fork, put,takeEvery, takeLatest,delay,call,take} from 'redux-saga/effects';
+import { LOG_IN_REQUEST, LOG_IN_SUCCESS,LOG_IN_FAILURE } from '../reducers/user'
 import { func } from 'prop-types';
 import { tuple } from 'antd/lib/_util/type';
 
@@ -24,7 +24,7 @@ function* login(){
 }
 
 function* watchLogin(){
-     yield takeEvery(LOG_IN,login);
+     yield takeEvery(LOG_IN_REQUEST,login);
     }
 
 function* watchSignUp(){
