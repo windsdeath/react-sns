@@ -1,7 +1,5 @@
-import {all, fork, put,takeEvery, takeLatest,delay,call,take} from 'redux-saga/effects';
+import {all, fork, put,takeEvery, takeLatest,delay,call} from 'redux-saga/effects';
 import { LOG_IN_REQUEST, LOG_IN_SUCCESS,LOG_IN_FAILURE } from '../reducers/user'
-import { func } from 'prop-types';
-import { tuple } from 'antd/lib/_util/type';
 
 const HELLO_SAGA = 'HELLO_SAGA';
 
@@ -16,6 +14,7 @@ function* login(){
             type:LOG_IN_SUCCESS
         })
     } catch (e){ //loginAPI 실패
+        // eslint-disable-next-line no-console
         console.log(e);
         yield put({
             type:LOG_IN_FAILURE
@@ -27,9 +26,9 @@ function* watchLogin(){
      yield takeEvery(LOG_IN_REQUEST,login);
     }
 
-function* watchSignUp(){
+// function* watchSignUp(){
 
-}
+// }
 
 function* hello(){
     yield delay(1000)
