@@ -1,8 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Form, Input, Checkbox, Button } from 'antd';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
-import { SIGN_UP_REQUEST} from '../reducers/user'
+import Router from 'next/router';
+import { SIGN_UP_REQUEST} from '../reducers/user';
 
 const TextInput = ({ value }) => {
   return (
@@ -32,9 +33,16 @@ const Signup = () => {
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
 
-  const {isSigningUp} = useSelector(state=> state.user)
+  const {isSigningUp, me} = useSelector(state=> state.user)
 
   const dispatch = useDispatch()
+
+useEffect(() => {
+  if (me){
+    alert('로그인 되었습니다.');
+    Router.push('/');
+  }
+}, [me && me.id]);
 
   const onSubmit = useCallback((e) => {
     e.preventDefault();

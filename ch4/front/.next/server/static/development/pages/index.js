@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -325,7 +325,7 @@ var PostForm = function PostForm() {
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-      src: 'http://localhost:3065/' + v,
+      src: "http://localhost:3065/".concat(v),
       style: {
         width: '200px'
       },
@@ -908,7 +908,7 @@ var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
