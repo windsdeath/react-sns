@@ -2147,8 +2147,11 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(w
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchSignUp),
     _marked5 =
 /*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchHello),
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(hello),
     _marked6 =
+/*#__PURE__*/
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchHello),
+    _marked7 =
 /*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(userSaga);
 
@@ -2213,26 +2216,10 @@ function watchLogin() {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
-          if (false) {}
+          _context3.next = 2;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN"], login);
 
-          _context3.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["take"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN"]);
-
-        case 3:
-          _context3.next = 5;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
-
-        case 5:
-          _context3.next = 7;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"]
-          });
-
-        case 7:
-          _context3.next = 0;
-          break;
-
-        case 9:
+        case 2:
         case "end":
           return _context3.stop();
       }
@@ -2252,42 +2239,42 @@ function watchSignUp() {
   }, _marked4);
 }
 
+function hello() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function hello$(_context5) {
+    while (1) {
+      switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.next = 2;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(1000);
+
+        case 2:
+          _context5.next = 4;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            type: 'BYE_SAGA'
+          });
+
+        case 4:
+        case "end":
+          return _context5.stop();
+      }
+    }
+  }, _marked5);
+}
+
 function watchHello() {
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchHello$(_context6) {
     while (1) {
       switch (_context6.prev = _context6.next) {
         case 0:
           _context6.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(HELLO_SAGA,
-          /*#__PURE__*/
-          _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-            return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context5) {
-              while (1) {
-                switch (_context5.prev = _context5.next) {
-                  case 0:
-                    _context5.next = 2;
-                    return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(1000);
-
-                  case 2:
-                    _context5.next = 4;
-                    return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-                      type: 'BYE_SAGA'
-                    });
-
-                  case 4:
-                  case "end":
-                    return _context5.stop();
-                }
-              }
-            }, _callee);
-          }));
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(HELLO_SAGA, hello);
 
         case 2:
         case "end":
           return _context6.stop();
       }
     }
-  }, _marked5);
+  }, _marked6);
 }
 
 function userSaga() {
@@ -2296,14 +2283,14 @@ function userSaga() {
       switch (_context7.prev = _context7.next) {
         case 0:
           _context7.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([watchLogin(), watchHello(), watchSignUp()]);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogin), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchHello)]);
 
         case 2:
         case "end":
           return _context7.stop();
       }
     }
-  }, _marked6);
+  }, _marked7);
 }
 
 /***/ }),

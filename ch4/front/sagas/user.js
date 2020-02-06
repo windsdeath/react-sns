@@ -24,31 +24,28 @@ function* login(){
 }
 
 function* watchLogin(){
-    while(true){
-    yield take(LOG_IN);
-    yield delay(2000);
-    yield put({
-        type: LOG_IN_SUCCESS,
-    })}
-}
+     yield takeEvery(LOG_IN,login);
+    }
 
 function* watchSignUp(){
 
 }
 
-function* watchHello(){
-    yield takeLatest(HELLO_SAGA, function*(){
-        yield delay(1000)
-        yield put({
-            type:'BYE_SAGA'
-        })
+function* hello(){
+    yield delay(1000)
+    yield put({
+        type:'BYE_SAGA'
     })
 }
 
+function* watchHello(){
+    yield takeLatest(HELLO_SAGA, hello)
+    }
+
+
 export default function* userSaga (){
     yield all([
-        watchLogin(),
-        watchHello(),
-        watchSignUp()
+        fork(watchLogin),
+        fork(watchHello),
     ])
 }
