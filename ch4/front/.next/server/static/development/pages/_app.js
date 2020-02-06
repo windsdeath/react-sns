@@ -2127,6 +2127,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var antd_lib_util_type__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/lib/_util/type */ "antd/lib/_util/type");
+/* harmony import */ var antd_lib_util_type__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(antd_lib_util_type__WEBPACK_IMPORTED_MODULE_4__);
 
 
 var _marked =
@@ -2140,13 +2144,12 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(l
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchLogin),
     _marked4 =
 /*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(hello),
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchSignUp),
     _marked5 =
 /*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(helloSaga),
-    _marked6 =
-/*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(userSaga);
+
+
 
 
 
@@ -2207,10 +2210,26 @@ function watchLogin() {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
-          _context3.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN"], login);
+          if (false) {}
 
-        case 2:
+          _context3.next = 3;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["take"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN"]);
+
+        case 3:
+          _context3.next = 5;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
+
+        case 5:
+          _context3.next = 7;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"]
+          });
+
+        case 7:
+          _context3.next = 0;
+          break;
+
+        case 9:
         case "end":
           return _context3.stop();
       }
@@ -2218,75 +2237,32 @@ function watchLogin() {
   }, _marked3);
 }
 
-function hello() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function hello$(_context4) {
+function watchSignUp() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchSignUp$(_context4) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
-          _context4.prev = 0;
-          _context4.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: 'HELLO_TWO'
-          });
-
-        case 3:
-          console.log('hello');
-          _context4.next = 9;
-          break;
-
-        case 6:
-          _context4.prev = 6;
-          _context4.t0 = _context4["catch"](0);
-          console.error(_context4.t0);
-
-        case 9:
         case "end":
           return _context4.stop();
       }
     }
-  }, _marked4, null, [[0, 6]]);
+  }, _marked4);
 }
 
-function helloSaga() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function helloSaga$(_context5) {
+function userSaga() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function userSaga$(_context5) {
     while (1) {
       switch (_context5.prev = _context5.next) {
         case 0:
-          console.log('before saga');
+          _context5.next = 2;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([watchLogin(), watchSignUp()]);
 
-        case 1:
-          if (false) {}
-
-          _context5.next = 4;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["take"])(HELLO_SAGA);
-
-        case 4:
-          console.log('hello saga');
-          _context5.next = 1;
-          break;
-
-        case 7:
+        case 2:
         case "end":
           return _context5.stop();
       }
     }
   }, _marked5);
-}
-
-function userSaga() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function userSaga$(_context6) {
-    while (1) {
-      switch (_context6.prev = _context6.next) {
-        case 0:
-          _context6.next = 2;
-          return helloSaga();
-
-        case 2:
-        case "end":
-          return _context6.stop();
-      }
-    }
-  }, _marked6);
 }
 
 /***/ }),
@@ -2311,6 +2287,17 @@ module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_
 /***/ (function(module, exports) {
 
 module.exports = require("antd");
+
+/***/ }),
+
+/***/ "antd/lib/_util/type":
+/*!**************************************!*\
+  !*** external "antd/lib/_util/type" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/_util/type");
 
 /***/ }),
 

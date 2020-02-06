@@ -1,5 +1,7 @@
-import {all, fork, put, takeLatest, take} from 'redux-saga/effects';
+import {all, fork, put, takeLatest,delay, take} from 'redux-saga/effects';
 import { LOG_IN, LOG_IN_SUCCESS,LOG_IN_FAILURE } from '../reducers/user'
+import { func } from 'prop-types';
+import { tuple } from 'antd/lib/_util/type';
 
 const HELLO_SAGA = 'HELLO_SAGA';
 
@@ -22,27 +24,21 @@ function* login(){
 }
 
 function* watchLogin(){
-    yield takeLatest(LOG_IN, login)
-}
-
-function* hello(){
-    try{
-        yield put({
-            type:'HELLO_TWO'
-        });
-        console.log('hello')
-    } catch(e){
-        console.error(e);
-    }
-}
-
-function* helloSaga(){
-    console.log('before saga');
     while(true){
-        yield take(HELLO_SAGA);
-        console.log('hello saga');
-}}
+    yield take(LOG_IN);
+    yield delay(2000);
+    yield put({
+        type: LOG_IN_SUCCESS,
+    })}
+}
+
+function* watchSignUp(){
+
+}
 
 export default function* userSaga (){
-    yield helloSaga();
+    yield all([
+        watchLogin(),
+        watchSignUp()
+    ])
 }
