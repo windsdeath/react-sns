@@ -7,9 +7,9 @@ const dummyUser = {
 }
 
 export const initialState= {
-  isloggedIn: false, // 로그인여부
-  isloggingIn: false, // 로그인 시도중
-  isloggingOut: false, // 로그아웃 시도중
+  isLoggedIn: false, // 로그인여부
+  isLoggingIn: false, // 로그인 시도중
+  isLoggingOut: false, // 로그아웃 시도중
   logInErrorReason:'', // 로그인 실패 사유
   signedUp: false, // 회원가입 성공
   isSigningUp:false,// 회원가입 시도중
@@ -66,42 +66,49 @@ export const signUpSuccess = {
 };
 
 
-export const loginAction = data => ({
+
+export const loginRequestAction = data => ({
   type: LOG_IN_REQUEST,
 });
 
-export const logoutAction = {
-  type:LOG_OUT_REQUEST,
+export const logoutRequestAction = {
+  type: LOG_OUT_REQUEST,
 };
+
+export const signUpRequestAction = data => ({
+  type: SIGN_UP_REQUEST,
+});
 
 const reducer =(state = initialState, action) => {
   switch (action.type){
     case LOG_IN_REQUEST: {
       return {
         ...state,
-        isLoading:true,
+        isLoggingIn:true,
+        logInErrorReason: '',
       };
     }
     case LOG_IN_SUCCESS:{
       return{
         ...state,
-        isloggedIn: true,
+        isLoggingIn:false,
+        isLoggedIn: true,
         me: dummyUser,
-        isLoading:false,
-    }
+      }
     }
     case LOG_IN_FAILURE:{
       return{
         ...state,
-        isloggedIn: false,
+        isLoggingIn:false,
+        isLoggedIn: false,
+        logInErrorReason: action.error,
         me: null,
-        isLoading:false,
     }
     }
     case LOG_OUT_REQUEST:{
       return {
         ...state,
-        isloggedIn:false,
+        isLoggedIn:false,
         me:null,
       };
     }

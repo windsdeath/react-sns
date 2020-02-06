@@ -1,5 +1,4 @@
 export const initialState = {
-  imagePaths:{},
   mainPosts: [{
     User: {
       id: 1,

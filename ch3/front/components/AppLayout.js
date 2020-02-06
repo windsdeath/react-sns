@@ -8,7 +8,7 @@ import {useSelector} from 'react-redux';
 
 const AppLayout = ({ children }) => {
   
-  const isLoggedIn = useSelector(state => state.user.user)
+const {isLoggedIn} = useSelector(state => state.user)
 
   return (
     <div>
