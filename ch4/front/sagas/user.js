@@ -1,5 +1,5 @@
 import {all, fork, put,takeEvery, takeLatest,delay,call} from 'redux-saga/effects';
-import { LOG_IN_REQUEST, LOG_IN_SUCCESS,LOG_IN_FAILURE, SIGN_UP_REQUEST } from '../reducers/user'
+import { LOG_IN_REQUEST, LOG_IN_SUCCESS,LOG_IN_FAILURE, SIGN_UP_REQUEST,SIGN_UP_SUCCESS,SIGN_UP_FAILURE } from '../reducers/user'
 import axios from 'axios';
 
 function* watchSignUp(){
@@ -31,7 +31,9 @@ function* signUpAPI(){
 
 function* signUp(){
     try {
-        yield call(signUpAPI)
+        // yield call(signUpAPI)
+        yield delay(2000);
+        throw new Error('에러낫쩌염 뿌우');
         yield put({ //put은 dispatch와 동일
             type:SIGN_UP_SUCCESS
         })
@@ -39,7 +41,8 @@ function* signUp(){
         // eslint-disable-next-line no-console
         console.log(e);
         yield put({
-            type:SIGN_UP_FAILURE
+            type:SIGN_UP_FAILURE,
+            error: e
         })
 }
 }
