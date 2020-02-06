@@ -355,16 +355,22 @@ var Home = function Home() {
   }),
       mainPosts = _useSelector2.mainPosts;
 
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    dispatch({
+      type: 'HELLO_SAGA'
+    });
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 19
     },
     __self: this
   }, isLoggedIn && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 20
     },
     __self: this
   }), mainPosts.map(function (c) {
@@ -373,7 +379,7 @@ var Home = function Home() {
       post: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 23
       },
       __self: this
     });

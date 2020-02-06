@@ -2140,10 +2140,17 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(l
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchLogin),
     _marked4 =
 /*#__PURE__*/
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(hello),
+    _marked5 =
+/*#__PURE__*/
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(helloSaga),
+    _marked6 =
+/*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(userSaga);
 
 
 
+var HELLO_SAGA = 'HELLO_SAGA';
 
 function loginAPI() {
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function loginAPI$(_context) {
@@ -2168,7 +2175,7 @@ function login() {
 
         case 3:
           _context2.next = 5;
-          return put({
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
             //put은 dispatch와 동일
             type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"]
           });
@@ -2183,7 +2190,7 @@ function login() {
           //loginAPI 실패
           console.log(_context2.t0);
           _context2.next = 12;
-          return put({
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
             type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"]
           });
 
@@ -2201,7 +2208,7 @@ function watchLogin() {
       switch (_context3.prev = _context3.next) {
         case 0:
           _context3.next = 2;
-          return takeLatest(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN"], login);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN"], login);
 
         case 2:
         case "end":
@@ -2211,20 +2218,75 @@ function watchLogin() {
   }, _marked3);
 }
 
-function userSaga() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function userSaga$(_context4) {
+function hello() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function hello$(_context4) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
-          _context4.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([fork(watchLogin)]);
+          _context4.prev = 0;
+          _context4.next = 3;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            type: 'HELLO_TWO'
+          });
 
-        case 2:
+        case 3:
+          console.log('hello');
+          _context4.next = 9;
+          break;
+
+        case 6:
+          _context4.prev = 6;
+          _context4.t0 = _context4["catch"](0);
+          console.error(_context4.t0);
+
+        case 9:
         case "end":
           return _context4.stop();
       }
     }
-  }, _marked4);
+  }, _marked4, null, [[0, 6]]);
+}
+
+function helloSaga() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function helloSaga$(_context5) {
+    while (1) {
+      switch (_context5.prev = _context5.next) {
+        case 0:
+          console.log('before saga');
+
+        case 1:
+          if (false) {}
+
+          _context5.next = 4;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["take"])(HELLO_SAGA);
+
+        case 4:
+          console.log('hello saga');
+          _context5.next = 1;
+          break;
+
+        case 7:
+        case "end":
+          return _context5.stop();
+      }
+    }
+  }, _marked5);
+}
+
+function userSaga() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function userSaga$(_context6) {
+    while (1) {
+      switch (_context6.prev = _context6.next) {
+        case 0:
+          _context6.next = 2;
+          return helloSaga();
+
+        case 2:
+        case "end":
+          return _context6.stop();
+      }
+    }
+  }, _marked6);
 }
 
 /***/ }),
