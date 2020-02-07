@@ -9,7 +9,7 @@ const config = require('/../config/config.json')[env];
 const db = {};
 
 let sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
