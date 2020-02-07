@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 
-var _jsxFileName = "/root/wsl_projects/react-sns/ch4/front/components/PostCard.js";
+var _jsxFileName = "/root/wsl_projects/react-sns/ch5/front/components/PostCard.js";
 
 
 
@@ -346,7 +346,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 
-var _jsxFileName = "/root/wsl_projects/react-sns/ch4/front/components/PostForm.js";
+var _jsxFileName = "/root/wsl_projects/react-sns/ch5/front/components/PostForm.js";
 
 
 
@@ -841,7 +841,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PostCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/PostCard */ "./components/PostCard.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/root/wsl_projects/react-sns/ch4/front/pages/index.js";
+var _jsxFileName = "/root/wsl_projects/react-sns/ch5/front/pages/index.js";
 
 
 
@@ -1095,7 +1095,7 @@ var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /root/wsl_projects/react-sns/ch4/front/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /root/wsl_projects/react-sns/ch5/front/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
