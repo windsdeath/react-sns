@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes)=> {
         db.Post.belongsTo(db.User);
         db.Post.hasMany(db.Comment);
         db.Post.hasMany(db.Image);
-        db.Post.belongsTo(db.Post);
+        db.Post.belongsTo(db.Post, {as:'Retweet'}); //같은데서 같은곳으로 간다면 구별이 안되니, as로 이름을 지어줌
+        db.Post.belongsToMany(db.HashTag, {through:'PostHashTag'});
+        db.Post.belongsToMany(db.User, {through:'Like', as:'Likers'});
     };
     
     return Post;
