@@ -8,6 +8,9 @@ const postsAPIRouter = require('./routes/posts');
 const app = express();
 db.sequelize.sync();
 
+app.use(express.json()); // json 본문처리
+app.use(express.urlencoded({ extended: true})); // form 본문처리
+
 app.use(/api/user, userAPIRouter); // import한 routes/user.js의 api의 기본경로를 /api/user로 만들어주는 부분.
 app.use(/api/post, postAPIRouter);
 app.use(/api/posts, postAPIRouter);
