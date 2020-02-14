@@ -55,12 +55,12 @@ useEffect(() => {
     dispatch({
       type:SIGN_UP_REQUEST,
       data:{
-      id,
+      userId: id,
       password,
-      nick,
+      nickname: nick,
       }
   });
-  }, [password, passwordCheck, term]);
+  }, [id, nick, password, passwordCheck, term]);
 
   const onChangePasswordCheck = useCallback((e) => {
     setPasswordError(e.target.value !== password);
@@ -75,7 +75,6 @@ useEffect(() => {
   return (
     <>
       <Form onSubmit={onSubmit} style={{ padding: 10 }}>
-        <TextInput value="135135" />
         <div>
           <label htmlFor="user-id">아이디</label>
           <br />
