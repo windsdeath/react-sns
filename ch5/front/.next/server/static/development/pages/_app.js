@@ -2525,7 +2525,10 @@ function watchSignUp() {
 }
 
 function loginAPI(loginData) {
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/login", loginData);
+  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/login", loginData, {
+    withCredentials: true // 3번째 인자로 이걸 명시해줘야 쿠키를 주고받을 수 있게 됨.
+
+  });
 }
 
 function login(action) {
