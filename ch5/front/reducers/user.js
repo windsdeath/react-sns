@@ -1,12 +1,4 @@
-const dummyUser = {
-  nickname: "SIPO",
-  Post: [],
-  Followings: [],
-  Followers: []
-};
-
 export const initialState = {
-  isLoggedIn: false, // 로그인여부
   isLoggingIn: false, // 로그인 시도중
   isLoggingOut: false, // 로그아웃 시도중
   logInErrorReason: "", // 로그인 실패 사유
@@ -64,7 +56,7 @@ export const signUpSuccess = {
   type: SIGN_UP_SUCCESS
 };
 
-export const loginRequestAction = data => ({
+export const loginRequestAction = () => ({
   type: LOG_IN_REQUEST
 });
 
@@ -72,7 +64,7 @@ export const logoutRequestAction = {
   type: LOG_OUT_REQUEST
 };
 
-export const signUpRequestAction = data => ({
+export const signUpRequestAction = () => ({
   type: SIGN_UP_REQUEST
 });
 
@@ -89,7 +81,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggingIn: false,
-        isLoggedIn: true,
         me: action.data
       };
     }
@@ -97,7 +88,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggingIn: false,
-        isLoggedIn: false,
         logInErrorReason: action.error,
         me: null
       };
@@ -105,10 +95,17 @@ const reducer = (state = initialState, action) => {
     case LOG_OUT_REQUEST: {
       return {
         ...state,
-        isLoggedIn: false,
+        isLoggingOut: true
+      };
+    }
+    case LOG_OUT_SUCCESS: {
+      return {
+        ...state,
+        isLoggingOut: false,
         me: null
       };
     }
+
     case SIGN_UP_REQUEST: {
       return {
         ...state,
@@ -129,6 +126,22 @@ const reducer = (state = initialState, action) => {
         ...state,
         isSigningUp: false,
         signUpErrorReason: action.error
+      };
+    }
+    case LOAD_USER_REQUEST: {
+      return {
+        ...state
+      };
+    }
+    case LOAD_USER_SUCCESS: {
+      return {
+        ...state,
+        me: action.data
+      };
+    }
+    case LOAD_USER_FAILURE: {
+      return {
+        ...state
       };
     }
     default: {
