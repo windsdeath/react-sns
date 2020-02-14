@@ -1,14 +1,16 @@
 const express = require('express');
 // 요청에 대한 로그를 남겨줌
 const morgan= require('morgan');
-const db = require('./models');
-const userAPIRouter = require('./routes/user');
-const postAPIRouter = require('./routes/post');
-const postsAPIRouter = require('./routes/posts');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const dotenv = require('dotenv');
+const passport = require('passport');
+
+const db = require('./models');
+const userAPIRouter = require('./routes/user');
+const postAPIRouter = require('./routes/post');
+const postsAPIRouter = require('./routes/posts');
 
 const app = express();
 db.sequelize.sync();
@@ -35,7 +37,8 @@ app.use(expressSession({
         secure:false, // https를 쓸때 트루로 해야함
     }
 }));
-
+app.use(passport.initialize()); // 패스포트는 세션 미들웨어 아래쪽에 써줘야함 ! 세션의 일부를 사용하기때문.
+app.use(passport.session()); 
 
 // 라우터 미들웨어
 app.use('/api/user', userAPIRouter); // import한 routes/user.js의 api의 기본경로를 /api/user로 만들어주는 부분.
