@@ -7,13 +7,17 @@ const expressSession = require('express-session');
 const dotenv = require('dotenv');
 const passport = require('passport');
 
+const passportConfig = require('./passport');
 const db = require('./models');
 const userAPIRouter = require('./routes/user');
 const postAPIRouter = require('./routes/post');
 const postsAPIRouter = require('./routes/posts');
 
+dotenv.config();
 const app = express();
 db.sequelize.sync();
+passportConfig();
+
 
 // 아래 두줄을 넣어줘야 라우터에서 whrer{req.body.userId,} 이런 형식으로 받을 수 있음.
 app.use('/',express.json()); // json 본문처리 '/' <- 생략가능
@@ -32,7 +36,7 @@ app.use(expressSession({
     saveUninitialized:false,
     // 시크릿 키! 쿠키파서에 도 같은값을넣어줌
     secret: process.env.COOKIE_SECRET,
-    cookie{
+    cookie:{
         httpOnly:true, // 자바스크립트에서 쿠키에 접근 못하게함.(보안, true 설정이 좋음)
         secure:false, // https를 쓸때 트루로 해야함
     }

@@ -1,4 +1,4 @@
-import {all, fork, put,takeEvery, takeLatest,delay,call} from 'redux-saga/effects';
+import {all, fork, put, takeEvery, call} from 'redux-saga/effects';
 import { LOG_IN_REQUEST, LOG_IN_SUCCESS,LOG_IN_FAILURE, SIGN_UP_REQUEST,SIGN_UP_SUCCESS,SIGN_UP_FAILURE } from '../reducers/user'
 import axios from 'axios';
 
@@ -6,13 +6,13 @@ function* watchSignUp(){
     yield takeEvery(SIGN_UP_REQUEST, signUp);
 }
 
-function* loginAPI(){
-    return axios.post('/login')
+function loginAPI(loginData){
+    return axios.post('/login', loginData)
 }
-function* login(){
+function* login(action){
     try {
         // yield call(loginAPI)
-        yield delay(2000);
+        yield call(loginAPI, action.data);
         yield put({ //put은 dispatch와 동일
             type:LOG_IN_SUCCESS
         })

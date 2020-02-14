@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const db = require('../models')
+const db = require('../models');
+const passport = require('passport');
 
 const router = express.Router();
 
@@ -38,13 +39,29 @@ router.get('/:id', (req, res) => { // 남의 정보 가져오는 것 ex) /3
 
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', (req, res) => { // POST /api/user/login
+    passport.authenticate('local', (err, user, info) => { // err, user, info 는 local.js의 done(null, false , {reason:'비밀번호가 틀립니다.}) 부분. 
+        if (err){
+            console.error(err);
+            return next(err);
+        }
+        if (info){
+            return res.status(401).send(info.reason);
+        }
+        return req.login(user, (loginErr) => {
+            if (loginErr) {
+                return next(loginErr);
+            }
+            const filteredUser = Object.assign({}, user);
+            delete filteredUser.password;
+            return res.json(filteredUser);
+        });
+    }); // kakao를 구현했음 kakao google이면 google 등으로 쓰면 됨.
+});
+router.post('/logout', (req, res) => { // /api/user/logout
 
 });
-router.post('/logout', (req, res) => {
-
-});
-router.get('/:id/follow', (req, res) => {
+router.get('/:id/follow', (req, res) => { // /api/user/:id/follow
 
 });
 router.post('/:id/follow', (req, res) => {
