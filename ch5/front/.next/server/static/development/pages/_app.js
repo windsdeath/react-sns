@@ -299,12 +299,12 @@ var _jsxFileName = "/root/wsl_projects/react-sns/ch5/front/components/LoginForm.
 
 
 var LoginForm = function LoginForm() {
-  var _useInput = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_4__["useInput"])(''),
+  var _useInput = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_4__["useInput"])(""),
       _useInput2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useInput, 2),
       id = _useInput2[0],
       onChangeId = _useInput2[1];
 
-  var _useInput3 = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_4__["useInput"])(''),
+  var _useInput3 = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_4__["useInput"])(""),
       _useInput4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useInput3, 2),
       password = _useInput4[0],
       onChangePassword = _useInput4[1];
@@ -320,7 +320,7 @@ var LoginForm = function LoginForm() {
     dispatch({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_6__["LOG_IN_REQUEST"],
       data: {
-        id: id,
+        userId: id,
         password: password
       }
     });
@@ -328,30 +328,30 @@ var LoginForm = function LoginForm() {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
     onSubmit: onSubmitForm,
     style: {
-      padding: '10px'
+      padding: "10px"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 29
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 30
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-id",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 31
     },
     __self: this
   }, "\uC544\uC774\uB514"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 32
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -361,26 +361,26 @@ var LoginForm = function LoginForm() {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 33
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 35
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 36
     },
     __self: this
   }, "\uBE44\uBC00\uBC88\uD638"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 37
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -391,16 +391,16 @@ var LoginForm = function LoginForm() {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 38
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
-      marginTop: '10px'
+      marginTop: "10px"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 46
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -409,26 +409,26 @@ var LoginForm = function LoginForm() {
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 47
     },
     __self: this
   }, "\uB85C\uADF8\uC778"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 50
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 51
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 52
     },
     __self: this
   }, "\uD68C\uC6D0\uAC00\uC785")))));
@@ -473,46 +473,10 @@ var UserProfile = function UserProfile() {
     });
   }, []);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_0__["Card"], {
-    actions: [react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      key: "twit",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, "\uC9F9\uC9F9", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }), me.Post.length), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      key: "following",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, "\uD314\uB85C\uC789", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }), me.Followings.length), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      key: "follower",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, "\uD314\uB85C\uC6CC", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }), me.Followers.length)],
+    actions: [// <div key="twit">짹짹<br />{me.Post.length}</div>,
+      // <div key="following">팔로잉<br />{me.Followings.length}</div>,
+      // <div key="follower">팔로워<br />{me.Followers.length}</div>,
+    ],
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
@@ -522,21 +486,21 @@ var UserProfile = function UserProfile() {
     avatar: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_0__["Avatar"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 27
       },
       __self: this
     }, me.nickname[0]),
     title: me.nickname,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 26
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_0__["Button"], {
     onClick: onLogout,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 30
     },
     __self: this
   }, "\uB85C\uADF8\uC544\uC6C3"));
@@ -1515,13 +1479,13 @@ var NodeSNS = function NodeSNS(_ref) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 23
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 24
     },
     __self: this
   })));
@@ -1539,7 +1503,7 @@ var configureStore = function configureStore(initialState, options) {
 
   var enhancer =  false ? undefined : Object(redux__WEBPACK_IMPORTED_MODULE_4__["compose"])(redux__WEBPACK_IMPORTED_MODULE_4__["applyMiddleware"].apply(void 0, middlewares), // 서버에서는 typeof windows !== 'undefined' 를 !options.isServer 로 대체해야 함
   // 배포할때는 익스텐션 뺴야함
-  !options.isServer && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : function (f) {
+  !options.isServer && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== "undefined" ? window.__REDUX_DEVTOOLS_EXTENSION__() : function (f) {
     return f;
   });
   var store = Object(redux__WEBPACK_IMPORTED_MODULE_4__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_8__["default"], initialState, enhancer); // 여기에 스토어 커스터마이징
@@ -1588,7 +1552,7 @@ var TextInput = function TextInput(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 9
     },
     __self: this
   }, value);
@@ -1612,7 +1576,7 @@ var useInput = function useInput() {
 };
 
 var Signup = function Signup() {
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
       passwordCheck = _useState4[0],
       setPasswordCheck = _useState4[1];
@@ -1632,17 +1596,17 @@ var Signup = function Signup() {
       termError = _useState10[0],
       setTermError = _useState10[1];
 
-  var _useInput = useInput(''),
+  var _useInput = useInput(""),
       _useInput2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useInput, 2),
       id = _useInput2[0],
       onChangeId = _useInput2[1];
 
-  var _useInput3 = useInput(''),
+  var _useInput3 = useInput(""),
       _useInput4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useInput3, 2),
       nick = _useInput4[0],
       onChangeNick = _useInput4[1];
 
-  var _useInput5 = useInput(''),
+  var _useInput5 = useInput(""),
       _useInput6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useInput5, 2),
       password = _useInput6[0],
       onChangePassword = _useInput6[1];
@@ -1656,8 +1620,8 @@ var Signup = function Signup() {
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     if (me) {
-      alert('로그인 되었습니다.');
-      next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/');
+      alert("로그인 되었습니다.");
+      next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/");
     }
   }, [me && me.id]);
   var onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (e) {
@@ -1695,26 +1659,26 @@ var Signup = function Signup() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 81
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 82
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-id",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 83
     },
     __self: this
   }, "\uC544\uC774\uB514"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 84
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1724,26 +1688,26 @@ var Signup = function Signup() {
     onChange: onChangeId,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 85
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 87
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-nick",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 88
     },
     __self: this
   }, "\uB2C9\uB124\uC784"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 89
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1753,26 +1717,26 @@ var Signup = function Signup() {
     onChange: onChangeNick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 90
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 97
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 98
     },
     __self: this
   }, "\uBE44\uBC00\uBC88\uD638"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 99
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1783,26 +1747,26 @@ var Signup = function Signup() {
     onChange: onChangePassword,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 100
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 108
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-password-check",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 109
     },
     __self: this
   }, "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 110
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1813,22 +1777,22 @@ var Signup = function Signup() {
     onChange: onChangePasswordCheck,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 111
     },
     __self: this
   }), passwordError && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
-      color: 'red'
+      color: "red"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 119
     },
     __self: this
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 122
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Checkbox"], {
@@ -1837,16 +1801,16 @@ var Signup = function Signup() {
     onChange: onChangeTerm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 123
     },
     __self: this
   }, "SIPO \uB9D0\uC744 \uC798 \uB4E4\uC744 \uAC83\uC744 \uB3D9\uC758\uD569\uB2C8\uB2E4."), termError && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
-      color: 'red'
+      color: "red"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 127
     },
     __self: this
   }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C \uD569\uB2C8\uB2E4.")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -1855,7 +1819,7 @@ var Signup = function Signup() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 130
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -1864,7 +1828,7 @@ var Signup = function Signup() {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 131
     },
     __self: this
   }, "\uAC00\uC785\uD558\uAE30"))));
@@ -2141,7 +2105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
 var dummyUser = {
-  nickname: 'SIPO',
+  nickname: "SIPO",
   Post: [],
   Followings: [],
   Followers: []
@@ -2153,13 +2117,13 @@ var initialState = {
   // 로그인 시도중
   isLoggingOut: false,
   // 로그아웃 시도중
-  logInErrorReason: '',
+  logInErrorReason: "",
   // 로그인 실패 사유
   signedUp: false,
   // 회원가입 성공
   isSigningUp: false,
   // 회원가입 시도중
-  signUpErrorReason: '',
+  signUpErrorReason: "",
   // 회원가입 실패사유
   me: null,
   //내정보
@@ -2170,32 +2134,32 @@ var initialState = {
   userInfo: null // 남의정보
 
 };
-var SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
-var SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
-var SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
-var LOG_IN_REQUEST = 'LOG_IN_REQUEST';
-var LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
-var LOG_IN_FAILURE = 'LOG_IN_FAILURE';
-var LOAD_USER_REQUEST = 'LOAD_USER_REQUEST';
-var LOAD_USER_SUCCESS = 'LOAD_USER_SUCCESS';
-var LOAD_USER_FAILURE = 'LOAD_USER_FAILURE';
-var LOG_OUT_REQUEST = 'LOG_OUT_REQUEST';
-var LOG_OUT_SUCCESS = 'LOG_OUT_SUCCESS';
-var LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
-var LOAD_FOLLW_REQUEST = 'LOAD_FOLLW_REQUEST';
-var LOAD_FOLLW_SUCCESS = 'LOAD_FOLLW_SUCCESS';
-var LOAD_FOLLW_FAILURE = 'LOAD_FOLLW_FAILURE';
-var FOLLOW_USER_REQUEST = 'FOLLOW_USER_REQUEST';
-var FOLLOW_USER_SUCCESS = 'FOLLOW_USER_SUCCESS';
-var FOLLOW_USER_FAILURE = 'FOLLOW_USER_FAILURE';
-var UNFOLLOW_USER_REQUEST = 'UNFOLLOW_USER_REQUEST';
-var UNFOLLOW_USER_SUCCESS = 'UNFOLLOW_USER_SUCCESS';
-var UNFOLLOW_USER_FAILURE = 'UNFOLLOW_USER_FAILURE';
-var REMOVE_FOLLOW_USER_REQUEST = 'REMOVE_FOLLOW_USER_REQUEST';
-var REMOVE_FOLLOW_USER_SUCCESS = 'REMOVE_FOLLOW_USER_SUCCESS';
-var REMOVE_FOLLOW_USER_FAILURE = 'REMOVE_FOLLOW_USER_FAILURE';
-var ADD_POST_TO_ME = 'ADD_POST_TO_ME';
-var INCREMENT_NUMBER = '';
+var SIGN_UP_REQUEST = "SIGN_UP_REQUEST";
+var SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
+var SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
+var LOG_IN_REQUEST = "LOG_IN_REQUEST";
+var LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
+var LOG_IN_FAILURE = "LOG_IN_FAILURE";
+var LOAD_USER_REQUEST = "LOAD_USER_REQUEST";
+var LOAD_USER_SUCCESS = "LOAD_USER_SUCCESS";
+var LOAD_USER_FAILURE = "LOAD_USER_FAILURE";
+var LOG_OUT_REQUEST = "LOG_OUT_REQUEST";
+var LOG_OUT_SUCCESS = "LOG_OUT_SUCCESS";
+var LOG_OUT_FAILURE = "LOG_OUT_FAILURE";
+var LOAD_FOLLW_REQUEST = "LOAD_FOLLW_REQUEST";
+var LOAD_FOLLW_SUCCESS = "LOAD_FOLLW_SUCCESS";
+var LOAD_FOLLW_FAILURE = "LOAD_FOLLW_FAILURE";
+var FOLLOW_USER_REQUEST = "FOLLOW_USER_REQUEST";
+var FOLLOW_USER_SUCCESS = "FOLLOW_USER_SUCCESS";
+var FOLLOW_USER_FAILURE = "FOLLOW_USER_FAILURE";
+var UNFOLLOW_USER_REQUEST = "UNFOLLOW_USER_REQUEST";
+var UNFOLLOW_USER_SUCCESS = "UNFOLLOW_USER_SUCCESS";
+var UNFOLLOW_USER_FAILURE = "UNFOLLOW_USER_FAILURE";
+var REMOVE_FOLLOW_USER_REQUEST = "REMOVE_FOLLOW_USER_REQUEST";
+var REMOVE_FOLLOW_USER_SUCCESS = "REMOVE_FOLLOW_USER_SUCCESS";
+var REMOVE_FOLLOW_USER_FAILURE = "REMOVE_FOLLOW_USER_FAILURE";
+var ADD_POST_TO_ME = "ADD_POST_TO_ME";
+var INCREMENT_NUMBER = "";
 var signUpAction = function signUpAction(data) {
   return {
     type: SIGN_UP_REQUEST,
@@ -2228,7 +2192,7 @@ var reducer = function reducer() {
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isLoggingIn: true,
-          logInErrorReason: ''
+          logInErrorReason: ""
         });
       }
 
@@ -2237,7 +2201,7 @@ var reducer = function reducer() {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isLoggingIn: false,
           isLoggedIn: true,
-          me: dummyUser
+          me: action.data
         });
       }
 
@@ -2264,7 +2228,7 @@ var reducer = function reducer() {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isSigningUp: true,
           isSignedUp: false,
-          signUpErrorReason: ''
+          signUpErrorReason: ""
         });
       }
 
@@ -2528,23 +2492,21 @@ var _marked =
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchSignUp),
     _marked2 =
 /*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(loginAPI),
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(login),
     _marked3 =
 /*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(login),
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(signUp),
     _marked4 =
 /*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(signUp),
-    _marked5 =
-/*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchLogin),
-    _marked6 =
+    _marked5 =
 /*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(userSaga);
 
 
 
 
+axios__WEBPACK_IMPORTED_MODULE_3___default.a.defaults.baseURL = "http://localhost:3065/api/";
 
 function watchSignUp() {
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchSignUp$(_context) {
@@ -2562,35 +2524,71 @@ function watchSignUp() {
   }, _marked);
 }
 
-function loginAPI() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function loginAPI$(_context2) {
+function loginAPI(loginData) {
+  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/login", loginData);
+}
+
+function login(action) {
+  var result;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function login$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          return _context2.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/login'));
+          _context2.prev = 0;
+          _context2.next = 3;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(loginAPI, action.data);
 
-        case 1:
+        case 3:
+          result = _context2.sent;
+          _context2.next = 6;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            //put은 dispatch와 동일
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"],
+            data: result.data
+          });
+
+        case 6:
+          _context2.next = 13;
+          break;
+
+        case 8:
+          _context2.prev = 8;
+          _context2.t0 = _context2["catch"](0);
+          //loginAPI 실패
+          // eslint-disable-next-line no-console
+          console.log(_context2.t0);
+          _context2.next = 13;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"]
+          });
+
+        case 13:
         case "end":
           return _context2.stop();
       }
     }
-  }, _marked2);
+  }, _marked2, null, [[0, 8]]);
 }
 
-function login() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function login$(_context3) {
+function signUpAPI(signUpData) {
+  // axios가 서버에 요청을 보냄
+  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user", signUpData);
+}
+
+function signUp(action) {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function signUp$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
           _context3.prev = 0;
           _context3.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(signUpAPI, action.data);
 
         case 3:
           _context3.next = 5;
           return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
             //put은 dispatch와 동일
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"]
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_SUCCESS"]
           });
 
         case 5:
@@ -2600,12 +2598,13 @@ function login() {
         case 7:
           _context3.prev = 7;
           _context3.t0 = _context3["catch"](0);
-          //loginAPI 실패
+          //loginAPI 실패시
           // eslint-disable-next-line no-console
           console.log(_context3.t0);
           _context3.next = 12;
           return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"]
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_FAILURE"],
+            error: _context3.t0
           });
 
         case 12:
@@ -2616,58 +2615,29 @@ function login() {
   }, _marked3, null, [[0, 7]]);
 }
 
-function signUpAPI(signUpData) {
-  // axios가 서버에 요청을 보냄
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('http://localhost:3065/api/user/', signUpData);
-}
-
-function signUp(action) {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function signUp$(_context4) {
+function watchLogin() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchLogin$(_context4) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
-          _context4.prev = 0;
-          _context4.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(signUpAPI, action.data);
+          _context4.next = 2;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_REQUEST"], login);
 
-        case 3:
-          _context4.next = 5;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            //put은 dispatch와 동일
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_SUCCESS"]
-          });
-
-        case 5:
-          _context4.next = 12;
-          break;
-
-        case 7:
-          _context4.prev = 7;
-          _context4.t0 = _context4["catch"](0);
-          //loginAPI 실패시
-          // eslint-disable-next-line no-console
-          console.log(_context4.t0);
-          _context4.next = 12;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_FAILURE"],
-            error: _context4.t0
-          });
-
-        case 12:
+        case 2:
         case "end":
           return _context4.stop();
       }
     }
-  }, _marked4, null, [[0, 7]]);
+  }, _marked4);
 }
 
-function watchLogin() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchLogin$(_context5) {
+function userSaga() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function userSaga$(_context5) {
     while (1) {
       switch (_context5.prev = _context5.next) {
         case 0:
           _context5.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_REQUEST"], login);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogin), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchSignUp)]);
 
         case 2:
         case "end":
@@ -2675,22 +2645,6 @@ function watchLogin() {
       }
     }
   }, _marked5);
-}
-
-function userSaga() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function userSaga$(_context6) {
-    while (1) {
-      switch (_context6.prev = _context6.next) {
-        case 0:
-          _context6.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogin), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchSignUp)]);
-
-        case 2:
-        case "end":
-          return _context6.stop();
-      }
-    }
-  }, _marked6);
 }
 
 /***/ }),

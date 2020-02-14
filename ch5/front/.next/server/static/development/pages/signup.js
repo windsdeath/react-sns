@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -366,7 +366,7 @@ var TextInput = function TextInput(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 9
     },
     __self: this
   }, value);
@@ -390,7 +390,7 @@ var useInput = function useInput() {
 };
 
 var Signup = function Signup() {
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
       passwordCheck = _useState4[0],
       setPasswordCheck = _useState4[1];
@@ -410,17 +410,17 @@ var Signup = function Signup() {
       termError = _useState10[0],
       setTermError = _useState10[1];
 
-  var _useInput = useInput(''),
+  var _useInput = useInput(""),
       _useInput2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useInput, 2),
       id = _useInput2[0],
       onChangeId = _useInput2[1];
 
-  var _useInput3 = useInput(''),
+  var _useInput3 = useInput(""),
       _useInput4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useInput3, 2),
       nick = _useInput4[0],
       onChangeNick = _useInput4[1];
 
-  var _useInput5 = useInput(''),
+  var _useInput5 = useInput(""),
       _useInput6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useInput5, 2),
       password = _useInput6[0],
       onChangePassword = _useInput6[1];
@@ -434,8 +434,8 @@ var Signup = function Signup() {
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     if (me) {
-      alert('로그인 되었습니다.');
-      next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/');
+      alert("로그인 되었습니다.");
+      next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/");
     }
   }, [me && me.id]);
   var onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (e) {
@@ -473,26 +473,26 @@ var Signup = function Signup() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 81
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 82
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-id",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 83
     },
     __self: this
   }, "\uC544\uC774\uB514"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 84
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -502,26 +502,26 @@ var Signup = function Signup() {
     onChange: onChangeId,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 85
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 87
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-nick",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 88
     },
     __self: this
   }, "\uB2C9\uB124\uC784"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 89
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -531,26 +531,26 @@ var Signup = function Signup() {
     onChange: onChangeNick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 90
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 97
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 98
     },
     __self: this
   }, "\uBE44\uBC00\uBC88\uD638"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 99
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -561,26 +561,26 @@ var Signup = function Signup() {
     onChange: onChangePassword,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 100
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 108
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-password-check",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 109
     },
     __self: this
   }, "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 110
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -591,22 +591,22 @@ var Signup = function Signup() {
     onChange: onChangePasswordCheck,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 111
     },
     __self: this
   }), passwordError && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
-      color: 'red'
+      color: "red"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 119
     },
     __self: this
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 122
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Checkbox"], {
@@ -615,16 +615,16 @@ var Signup = function Signup() {
     onChange: onChangeTerm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 123
     },
     __self: this
   }, "SIPO \uB9D0\uC744 \uC798 \uB4E4\uC744 \uAC83\uC744 \uB3D9\uC758\uD569\uB2C8\uB2E4."), termError && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
-      color: 'red'
+      color: "red"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 127
     },
     __self: this
   }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C \uD569\uB2C8\uB2E4.")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -633,7 +633,7 @@ var Signup = function Signup() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 130
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -642,7 +642,7 @@ var Signup = function Signup() {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 131
     },
     __self: this
   }, "\uAC00\uC785\uD558\uAE30"))));
@@ -696,7 +696,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
 var dummyUser = {
-  nickname: 'SIPO',
+  nickname: "SIPO",
   Post: [],
   Followings: [],
   Followers: []
@@ -708,13 +708,13 @@ var initialState = {
   // 로그인 시도중
   isLoggingOut: false,
   // 로그아웃 시도중
-  logInErrorReason: '',
+  logInErrorReason: "",
   // 로그인 실패 사유
   signedUp: false,
   // 회원가입 성공
   isSigningUp: false,
   // 회원가입 시도중
-  signUpErrorReason: '',
+  signUpErrorReason: "",
   // 회원가입 실패사유
   me: null,
   //내정보
@@ -725,32 +725,32 @@ var initialState = {
   userInfo: null // 남의정보
 
 };
-var SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
-var SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
-var SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
-var LOG_IN_REQUEST = 'LOG_IN_REQUEST';
-var LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
-var LOG_IN_FAILURE = 'LOG_IN_FAILURE';
-var LOAD_USER_REQUEST = 'LOAD_USER_REQUEST';
-var LOAD_USER_SUCCESS = 'LOAD_USER_SUCCESS';
-var LOAD_USER_FAILURE = 'LOAD_USER_FAILURE';
-var LOG_OUT_REQUEST = 'LOG_OUT_REQUEST';
-var LOG_OUT_SUCCESS = 'LOG_OUT_SUCCESS';
-var LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
-var LOAD_FOLLW_REQUEST = 'LOAD_FOLLW_REQUEST';
-var LOAD_FOLLW_SUCCESS = 'LOAD_FOLLW_SUCCESS';
-var LOAD_FOLLW_FAILURE = 'LOAD_FOLLW_FAILURE';
-var FOLLOW_USER_REQUEST = 'FOLLOW_USER_REQUEST';
-var FOLLOW_USER_SUCCESS = 'FOLLOW_USER_SUCCESS';
-var FOLLOW_USER_FAILURE = 'FOLLOW_USER_FAILURE';
-var UNFOLLOW_USER_REQUEST = 'UNFOLLOW_USER_REQUEST';
-var UNFOLLOW_USER_SUCCESS = 'UNFOLLOW_USER_SUCCESS';
-var UNFOLLOW_USER_FAILURE = 'UNFOLLOW_USER_FAILURE';
-var REMOVE_FOLLOW_USER_REQUEST = 'REMOVE_FOLLOW_USER_REQUEST';
-var REMOVE_FOLLOW_USER_SUCCESS = 'REMOVE_FOLLOW_USER_SUCCESS';
-var REMOVE_FOLLOW_USER_FAILURE = 'REMOVE_FOLLOW_USER_FAILURE';
-var ADD_POST_TO_ME = 'ADD_POST_TO_ME';
-var INCREMENT_NUMBER = '';
+var SIGN_UP_REQUEST = "SIGN_UP_REQUEST";
+var SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
+var SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
+var LOG_IN_REQUEST = "LOG_IN_REQUEST";
+var LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
+var LOG_IN_FAILURE = "LOG_IN_FAILURE";
+var LOAD_USER_REQUEST = "LOAD_USER_REQUEST";
+var LOAD_USER_SUCCESS = "LOAD_USER_SUCCESS";
+var LOAD_USER_FAILURE = "LOAD_USER_FAILURE";
+var LOG_OUT_REQUEST = "LOG_OUT_REQUEST";
+var LOG_OUT_SUCCESS = "LOG_OUT_SUCCESS";
+var LOG_OUT_FAILURE = "LOG_OUT_FAILURE";
+var LOAD_FOLLW_REQUEST = "LOAD_FOLLW_REQUEST";
+var LOAD_FOLLW_SUCCESS = "LOAD_FOLLW_SUCCESS";
+var LOAD_FOLLW_FAILURE = "LOAD_FOLLW_FAILURE";
+var FOLLOW_USER_REQUEST = "FOLLOW_USER_REQUEST";
+var FOLLOW_USER_SUCCESS = "FOLLOW_USER_SUCCESS";
+var FOLLOW_USER_FAILURE = "FOLLOW_USER_FAILURE";
+var UNFOLLOW_USER_REQUEST = "UNFOLLOW_USER_REQUEST";
+var UNFOLLOW_USER_SUCCESS = "UNFOLLOW_USER_SUCCESS";
+var UNFOLLOW_USER_FAILURE = "UNFOLLOW_USER_FAILURE";
+var REMOVE_FOLLOW_USER_REQUEST = "REMOVE_FOLLOW_USER_REQUEST";
+var REMOVE_FOLLOW_USER_SUCCESS = "REMOVE_FOLLOW_USER_SUCCESS";
+var REMOVE_FOLLOW_USER_FAILURE = "REMOVE_FOLLOW_USER_FAILURE";
+var ADD_POST_TO_ME = "ADD_POST_TO_ME";
+var INCREMENT_NUMBER = "";
 var signUpAction = function signUpAction(data) {
   return {
     type: SIGN_UP_REQUEST,
@@ -783,7 +783,7 @@ var reducer = function reducer() {
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isLoggingIn: true,
-          logInErrorReason: ''
+          logInErrorReason: ""
         });
       }
 
@@ -792,7 +792,7 @@ var reducer = function reducer() {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isLoggingIn: false,
           isLoggedIn: true,
-          me: dummyUser
+          me: action.data
         });
       }
 
@@ -819,7 +819,7 @@ var reducer = function reducer() {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isSigningUp: true,
           isSignedUp: false,
-          signUpErrorReason: ''
+          signUpErrorReason: ""
         });
       }
 
@@ -850,7 +850,7 @@ var reducer = function reducer() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!*******************************!*\
   !*** multi ./pages/signup.js ***!
   \*******************************/
