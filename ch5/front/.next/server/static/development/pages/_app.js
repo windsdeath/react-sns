@@ -473,10 +473,46 @@ var UserProfile = function UserProfile() {
     });
   }, []);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_0__["Card"], {
-    actions: [// <div key="twit">짹짹<br />{me.Post.length}</div>,
-      // <div key="following">팔로잉<br />{me.Followings.length}</div>,
-      // <div key="follower">팔로워<br />{me.Followers.length}</div>,
-    ],
+    actions: [react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      key: "twit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, "\uC9F9\uC9F9", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }), me.Post.length), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      key: "following",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, "\uD314\uB85C\uC789", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }), me.Followings.length), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      key: "follower",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, "\uD314\uB85C\uC6CC", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }), me.Followers.length)],
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
@@ -486,21 +522,21 @@ var UserProfile = function UserProfile() {
     avatar: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_0__["Avatar"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 37
       },
       __self: this
     }, me.nickname[0]),
     title: me.nickname,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 36
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_0__["Button"], {
     onClick: onLogout,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 40
     },
     __self: this
   }, "\uB85C\uADF8\uC544\uC6C3"));

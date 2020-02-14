@@ -6,6 +6,7 @@ const passport = require("passport");
 const router = express.Router();
 
 router.get("/", (req, res) => {});
+
 router.post("/", async (req, res, next) => {
   try {
     const exUser = await db.User.findOne({
@@ -16,7 +17,7 @@ router.post("/", async (req, res, next) => {
     if (exUser) {
       return res.status(403).send("이미 사용중인 아이디 입니다.");
     }
-    const hashedPassword = await bcrypt.hash(req.body.password, 12);
+    const hashedPassword = await bcrypt.hash(req.body.password, 12); // salt는 10~13 사이로
     const newUser = await db.User.create({
       nickname: req.body.nickname,
       userId: req.body.userId,
@@ -48,13 +49,37 @@ router.post("/login", (req, res, next) => {
     if (info) {
       return res.status(401).send(info.reason);
     }
-    return req.login(user, loginErr => {
-      if (loginErr) {
-        return next(loginErr);
+    return req.login(user, async loginErr => {
+      try {
+        if (loginErr) {
+          return next(loginErr);
+        }
+        const fullUser = await db.User.findOne({
+          where: { id: user.id },
+          include: [
+            {
+              model: db.Post,
+              as: "Posts",
+              attributes: ["id"]
+            },
+            {
+              model: db.User,
+              as: "Followings",
+              attributes: ["id"]
+            },
+            {
+              model: db.User,
+              as: "Followers",
+              attributes: ["id"]
+            }
+          ],
+          attributes: ["id", "nickname", "userId"]
+        });
+        console.log(fullUser);
+        return res.json(fullUser);
+      } catch (e) {
+        next(e);
       }
-      const filteredUser = Object.assign({}, user.toJSON()); // 시퀄라이저에서 가져온객체라 toJSON() 붙여서 사용해야함.
-      delete filteredUser.password;
-      return res.json(filteredUser);
     });
   })(req, res, next); // kakao를 구현했음 kakao google이면 google 등으로 쓰면 됨.
 });
