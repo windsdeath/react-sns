@@ -355,9 +355,9 @@ var _jsxFileName = "/root/wsl_projects/react-sns/ch5/front/components/PostForm.j
 var PostForm = function PostForm() {
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
-      Text = _useState2[0],
+      text = _useState2[0],
       setText = _useState2[1];
 
   var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(function (state) {
@@ -368,29 +368,29 @@ var PostForm = function PostForm() {
       postAdded = _useSelector.postAdded;
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    setText('');
+    setText("");
   }, [postAdded === true]);
   var onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (e) {
     e.preventDefault();
     dispatch({
       type: _reducers_post__WEBPACK_IMPORTED_MODULE_4__["ADD_POST_REQUEST"],
       data: {
-        Text: Text
+        content: text
       }
     });
-  }, []);
+  }, [text]);
   var onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (e) {
     setText(e.target.value);
   }, []);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
     style: {
-      margin: '10px 0 20px'
+      margin: "10px 0 20px"
     },
     encType: "multipart/form-data",
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 35
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"].TextArea, {
@@ -398,13 +398,13 @@ var PostForm = function PostForm() {
     placeholder: "\uC5B4\uB5A4 \uC2E0\uAE30\uD55C \uC77C\uC774 \uC788\uC5C8\uB098\uC694?",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 40
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 44
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -413,65 +413,65 @@ var PostForm = function PostForm() {
     hidden: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 45
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 46
     },
     __self: this
   }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     type: "primary",
     style: {
-      float: 'right'
+      float: "right"
     },
     loading: isAddingPost,
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 47
     },
     __self: this
   }, "\uC9F9\uC9F9")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 56
     },
     __self: this
   }, imagePaths.map(function (v) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       key: v,
       style: {
-        display: 'inline-block'
+        display: "inline-block"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 59
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
       src: "http://localhost:3065/".concat(v),
       style: {
-        width: '200px'
+        width: "200px"
       },
       alt: v,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 60
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 65
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 66
       },
       __self: this
     }, "\uC81C\uAC70")));
@@ -851,7 +851,7 @@ var Home = function Home() {
   var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(function (state) {
     return state.user;
   }),
-      isLoggedIn = _useSelector.isLoggedIn;
+      me = _useSelector.me;
 
   var _useSelector2 = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(function (state) {
     return state.post;
@@ -866,7 +866,7 @@ var Home = function Home() {
       lineNumber: 14
     },
     __self: this
-  }, isLoggedIn && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, me && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
@@ -942,10 +942,10 @@ var initialState = {
     id: 1,
     User: {
       id: 1,
-      nickname: 'SIPO'
+      nickname: "SIPO"
     },
-    content: '첫 번째 게시글',
-    img: 'http://wordpress.sipo.kr/wp-content/uploads/2020/01/web_logo.svg',
+    content: "첫 번째 게시글",
+    img: "http://wordpress.sipo.kr/wp-content/uploads/2020/01/web_logo.svg",
     Comments: []
   }],
   // 화면에 보일 포스트들
@@ -958,61 +958,52 @@ var initialState = {
   postAdded: false,
   //포스트 업로드 성공
   isAddingComment: false,
-  addCommentErrorReason: '',
+  addCommentErrorReason: "",
   commentAdded: false
-};
-var dummyPost = {
-  id: 2,
-  User: {
-    id: 1,
-    nickname: 'SIPO'
-  },
-  content: '나는 더미입니다.',
-  Comments: []
 };
 var dummyComment = {
   id: 1,
   User: {
     id: 1,
-    nickname: 'SIPO'
+    nickname: "SIPO"
   },
   createdAt: new Date(),
-  content: '더미 댓글입니다.'
+  content: "더미 댓글입니다."
 };
-var LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
-var LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS';
-var LOAD_MAIN_POSTS_FAILURE = 'LOAD_MAIN_POSTS_FAILURE';
-var LOAD_HASHTAG_POSTS_REQUEST = 'LOAD_HASHTAG_POSTS_REQUEST';
-var LOAD_HASHTAG_POSTS_SUCCESS = 'LOAD_HASHTAG_POSTS_SUCCESS';
-var LOAD_HASHTAG_POSTS_FAILURE = 'LOAD_HASHTAG_POSTS_FAILURE';
-var LOAD_USER_POSTS_REQUEST = 'LOAD_USER_POSTS_REQUEST';
-var LOAD_USER_POSTS_SUCCESS = 'LOAD_USER_POSTS_SUCCESS';
-var LOAD_USER_POSTS_FAILURE = 'LOAD_USER_POSTS_FAILURE';
-var UPLOAD_IMAGE_REQUEST = 'UPLOAD_IMAGE_REQUEST';
-var UPLOAD_IMAGE_SUCCESS = 'UPLOAD_IMAGE_SUCCESS';
-var UPLOAD_IMAGE_FAILURE = 'UPLOAD_IMAGE_FAILURE';
-var REMOVE_IMAGE = 'UREMOVE_IMAGE';
-var ADD_POST_REQUEST = 'ADD_POST_REQUEST';
-var ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
-var ADD_POST_FAILURE = 'ADD_POST_FAILURE';
-var LIKE_POST_REQUEST = 'LIKE_POST_REQUEST';
-var LIKE_POST_SUCCESS = 'LIKE_POST_SUCCESS';
-var LIKE_POST_FAILURE = 'LIKE_POST_FAILURE';
-var UNLIKE_POST_REQUEST = 'UNLIKE_POST_REQUEST';
-var UNLIKE_POST_SUCCESS = 'UNLIKE_POST_SUCCESS';
-var UNLIKE_POST_FAILURE = 'UNLIKE_POST_FAILURE';
-var ADD_COMMENT_REQUEST = 'ADD_COMMENT_REQUEST';
-var ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
-var ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
-var LOAD_COMMENTS_REQUEST = 'LOAD_COMMENTS_REQUEST';
-var LOAD_COMMENTS_SUCCESS = 'LOAD_COMMENTS_SUCCESS';
-var LOAD_COMMENTS_FAILURE = 'LOAD_COMMENTS_FAILURE';
-var RETWEET_REQUEST = 'RETWEET_REQUEST';
-var RETWEET_SUCCESS = 'RETWEET_SUCCESS';
-var RETWEET_FAILURE = 'RETWEET_FAILURE';
-var REMOVE_POST_REQUEST = 'REMOVE_POST_REQUEST';
-var REMOVE_POST_SUCCESS = 'REMOVE_POST_SUCCESS';
-var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
+var LOAD_MAIN_POSTS_REQUEST = "LOAD_MAIN_POSTS_REQUEST";
+var LOAD_MAIN_POSTS_SUCCESS = "LOAD_MAIN_POSTS_SUCCESS";
+var LOAD_MAIN_POSTS_FAILURE = "LOAD_MAIN_POSTS_FAILURE";
+var LOAD_HASHTAG_POSTS_REQUEST = "LOAD_HASHTAG_POSTS_REQUEST";
+var LOAD_HASHTAG_POSTS_SUCCESS = "LOAD_HASHTAG_POSTS_SUCCESS";
+var LOAD_HASHTAG_POSTS_FAILURE = "LOAD_HASHTAG_POSTS_FAILURE";
+var LOAD_USER_POSTS_REQUEST = "LOAD_USER_POSTS_REQUEST";
+var LOAD_USER_POSTS_SUCCESS = "LOAD_USER_POSTS_SUCCESS";
+var LOAD_USER_POSTS_FAILURE = "LOAD_USER_POSTS_FAILURE";
+var UPLOAD_IMAGE_REQUEST = "UPLOAD_IMAGE_REQUEST";
+var UPLOAD_IMAGE_SUCCESS = "UPLOAD_IMAGE_SUCCESS";
+var UPLOAD_IMAGE_FAILURE = "UPLOAD_IMAGE_FAILURE";
+var REMOVE_IMAGE = "UREMOVE_IMAGE";
+var ADD_POST_REQUEST = "ADD_POST_REQUEST";
+var ADD_POST_SUCCESS = "ADD_POST_SUCCESS";
+var ADD_POST_FAILURE = "ADD_POST_FAILURE";
+var LIKE_POST_REQUEST = "LIKE_POST_REQUEST";
+var LIKE_POST_SUCCESS = "LIKE_POST_SUCCESS";
+var LIKE_POST_FAILURE = "LIKE_POST_FAILURE";
+var UNLIKE_POST_REQUEST = "UNLIKE_POST_REQUEST";
+var UNLIKE_POST_SUCCESS = "UNLIKE_POST_SUCCESS";
+var UNLIKE_POST_FAILURE = "UNLIKE_POST_FAILURE";
+var ADD_COMMENT_REQUEST = "ADD_COMMENT_REQUEST";
+var ADD_COMMENT_SUCCESS = "ADD_COMMENT_SUCCESS";
+var ADD_COMMENT_FAILURE = "ADD_COMMENT_FAILURE";
+var LOAD_COMMENTS_REQUEST = "LOAD_COMMENTS_REQUEST";
+var LOAD_COMMENTS_SUCCESS = "LOAD_COMMENTS_SUCCESS";
+var LOAD_COMMENTS_FAILURE = "LOAD_COMMENTS_FAILURE";
+var RETWEET_REQUEST = "RETWEET_REQUEST";
+var RETWEET_SUCCESS = "RETWEET_SUCCESS";
+var RETWEET_FAILURE = "RETWEET_FAILURE";
+var REMOVE_POST_REQUEST = "REMOVE_POST_REQUEST";
+var REMOVE_POST_SUCCESS = "REMOVE_POST_SUCCESS";
+var REMOVE_POST_FAILURE = "REMOVE_POST_FAILURE";
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -1022,7 +1013,8 @@ var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
           isAddingPost: true,
-          addPostErrorReason: ''
+          addPostErrorReason: "",
+          postAdded: false
         });
       }
 
@@ -1030,7 +1022,8 @@ var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
           isAddingPost: false,
-          mainPosts: [dummyPost].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state.mainPosts))
+          mainPosts: [action.data].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state.mainPosts)),
+          postAdded: true
         });
       }
 
@@ -1046,7 +1039,7 @@ var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
           isAddingComment: true,
-          addCommentErrorReason: '',
+          addCommentErrorReason: "",
           commentAdded: false
         });
       }

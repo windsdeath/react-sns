@@ -1,3 +1,4 @@
+import axios from "axios";
 import { all, fork, put, takeEvery, call } from "redux-saga/effects";
 import {
   LOG_IN_REQUEST,
@@ -12,9 +13,6 @@ import {
   SIGN_UP_SUCCESS,
   SIGN_UP_FAILURE
 } from "../reducers/user";
-import axios from "axios";
-
-axios.defaults.baseURL = "http://localhost:3065/api/";
 
 function* watchLogIn() {
   yield takeEvery(LOG_IN_REQUEST, logIn);

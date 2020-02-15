@@ -1937,10 +1937,10 @@ var initialState = {
     id: 1,
     User: {
       id: 1,
-      nickname: 'SIPO'
+      nickname: "SIPO"
     },
-    content: '첫 번째 게시글',
-    img: 'http://wordpress.sipo.kr/wp-content/uploads/2020/01/web_logo.svg',
+    content: "첫 번째 게시글",
+    img: "http://wordpress.sipo.kr/wp-content/uploads/2020/01/web_logo.svg",
     Comments: []
   }],
   // 화면에 보일 포스트들
@@ -1953,61 +1953,52 @@ var initialState = {
   postAdded: false,
   //포스트 업로드 성공
   isAddingComment: false,
-  addCommentErrorReason: '',
+  addCommentErrorReason: "",
   commentAdded: false
-};
-var dummyPost = {
-  id: 2,
-  User: {
-    id: 1,
-    nickname: 'SIPO'
-  },
-  content: '나는 더미입니다.',
-  Comments: []
 };
 var dummyComment = {
   id: 1,
   User: {
     id: 1,
-    nickname: 'SIPO'
+    nickname: "SIPO"
   },
   createdAt: new Date(),
-  content: '더미 댓글입니다.'
+  content: "더미 댓글입니다."
 };
-var LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
-var LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS';
-var LOAD_MAIN_POSTS_FAILURE = 'LOAD_MAIN_POSTS_FAILURE';
-var LOAD_HASHTAG_POSTS_REQUEST = 'LOAD_HASHTAG_POSTS_REQUEST';
-var LOAD_HASHTAG_POSTS_SUCCESS = 'LOAD_HASHTAG_POSTS_SUCCESS';
-var LOAD_HASHTAG_POSTS_FAILURE = 'LOAD_HASHTAG_POSTS_FAILURE';
-var LOAD_USER_POSTS_REQUEST = 'LOAD_USER_POSTS_REQUEST';
-var LOAD_USER_POSTS_SUCCESS = 'LOAD_USER_POSTS_SUCCESS';
-var LOAD_USER_POSTS_FAILURE = 'LOAD_USER_POSTS_FAILURE';
-var UPLOAD_IMAGE_REQUEST = 'UPLOAD_IMAGE_REQUEST';
-var UPLOAD_IMAGE_SUCCESS = 'UPLOAD_IMAGE_SUCCESS';
-var UPLOAD_IMAGE_FAILURE = 'UPLOAD_IMAGE_FAILURE';
-var REMOVE_IMAGE = 'UREMOVE_IMAGE';
-var ADD_POST_REQUEST = 'ADD_POST_REQUEST';
-var ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
-var ADD_POST_FAILURE = 'ADD_POST_FAILURE';
-var LIKE_POST_REQUEST = 'LIKE_POST_REQUEST';
-var LIKE_POST_SUCCESS = 'LIKE_POST_SUCCESS';
-var LIKE_POST_FAILURE = 'LIKE_POST_FAILURE';
-var UNLIKE_POST_REQUEST = 'UNLIKE_POST_REQUEST';
-var UNLIKE_POST_SUCCESS = 'UNLIKE_POST_SUCCESS';
-var UNLIKE_POST_FAILURE = 'UNLIKE_POST_FAILURE';
-var ADD_COMMENT_REQUEST = 'ADD_COMMENT_REQUEST';
-var ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
-var ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
-var LOAD_COMMENTS_REQUEST = 'LOAD_COMMENTS_REQUEST';
-var LOAD_COMMENTS_SUCCESS = 'LOAD_COMMENTS_SUCCESS';
-var LOAD_COMMENTS_FAILURE = 'LOAD_COMMENTS_FAILURE';
-var RETWEET_REQUEST = 'RETWEET_REQUEST';
-var RETWEET_SUCCESS = 'RETWEET_SUCCESS';
-var RETWEET_FAILURE = 'RETWEET_FAILURE';
-var REMOVE_POST_REQUEST = 'REMOVE_POST_REQUEST';
-var REMOVE_POST_SUCCESS = 'REMOVE_POST_SUCCESS';
-var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
+var LOAD_MAIN_POSTS_REQUEST = "LOAD_MAIN_POSTS_REQUEST";
+var LOAD_MAIN_POSTS_SUCCESS = "LOAD_MAIN_POSTS_SUCCESS";
+var LOAD_MAIN_POSTS_FAILURE = "LOAD_MAIN_POSTS_FAILURE";
+var LOAD_HASHTAG_POSTS_REQUEST = "LOAD_HASHTAG_POSTS_REQUEST";
+var LOAD_HASHTAG_POSTS_SUCCESS = "LOAD_HASHTAG_POSTS_SUCCESS";
+var LOAD_HASHTAG_POSTS_FAILURE = "LOAD_HASHTAG_POSTS_FAILURE";
+var LOAD_USER_POSTS_REQUEST = "LOAD_USER_POSTS_REQUEST";
+var LOAD_USER_POSTS_SUCCESS = "LOAD_USER_POSTS_SUCCESS";
+var LOAD_USER_POSTS_FAILURE = "LOAD_USER_POSTS_FAILURE";
+var UPLOAD_IMAGE_REQUEST = "UPLOAD_IMAGE_REQUEST";
+var UPLOAD_IMAGE_SUCCESS = "UPLOAD_IMAGE_SUCCESS";
+var UPLOAD_IMAGE_FAILURE = "UPLOAD_IMAGE_FAILURE";
+var REMOVE_IMAGE = "UREMOVE_IMAGE";
+var ADD_POST_REQUEST = "ADD_POST_REQUEST";
+var ADD_POST_SUCCESS = "ADD_POST_SUCCESS";
+var ADD_POST_FAILURE = "ADD_POST_FAILURE";
+var LIKE_POST_REQUEST = "LIKE_POST_REQUEST";
+var LIKE_POST_SUCCESS = "LIKE_POST_SUCCESS";
+var LIKE_POST_FAILURE = "LIKE_POST_FAILURE";
+var UNLIKE_POST_REQUEST = "UNLIKE_POST_REQUEST";
+var UNLIKE_POST_SUCCESS = "UNLIKE_POST_SUCCESS";
+var UNLIKE_POST_FAILURE = "UNLIKE_POST_FAILURE";
+var ADD_COMMENT_REQUEST = "ADD_COMMENT_REQUEST";
+var ADD_COMMENT_SUCCESS = "ADD_COMMENT_SUCCESS";
+var ADD_COMMENT_FAILURE = "ADD_COMMENT_FAILURE";
+var LOAD_COMMENTS_REQUEST = "LOAD_COMMENTS_REQUEST";
+var LOAD_COMMENTS_SUCCESS = "LOAD_COMMENTS_SUCCESS";
+var LOAD_COMMENTS_FAILURE = "LOAD_COMMENTS_FAILURE";
+var RETWEET_REQUEST = "RETWEET_REQUEST";
+var RETWEET_SUCCESS = "RETWEET_SUCCESS";
+var RETWEET_FAILURE = "RETWEET_FAILURE";
+var REMOVE_POST_REQUEST = "REMOVE_POST_REQUEST";
+var REMOVE_POST_SUCCESS = "REMOVE_POST_SUCCESS";
+var REMOVE_POST_FAILURE = "REMOVE_POST_FAILURE";
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -2017,7 +2008,8 @@ var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
           isAddingPost: true,
-          addPostErrorReason: ''
+          addPostErrorReason: "",
+          postAdded: false
         });
       }
 
@@ -2025,7 +2017,8 @@ var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
           isAddingPost: false,
-          mainPosts: [dummyPost].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state.mainPosts))
+          mainPosts: [action.data].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state.mainPosts)),
+          postAdded: true
         });
       }
 
@@ -2041,7 +2034,7 @@ var REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
           isAddingComment: true,
-          addCommentErrorReason: '',
+          addCommentErrorReason: "",
           commentAdded: false
         });
       }
@@ -2311,6 +2304,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user */ "./sagas/user.js");
 /* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post */ "./sagas/post.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 
 
 var _marked =
@@ -2319,6 +2314,9 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(r
 
 
 
+
+
+axios__WEBPACK_IMPORTED_MODULE_4___default.a.defaults.baseURL = "http://localhost:3065/api/"; // post에도 적용이됨! -> 노드에서 모듈을 캐싱하기때문에 여기서 설정해도 post에도 적용됨
 
 function rootSaga() {
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function rootSaga$(_context) {
@@ -2350,9 +2348,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return postSaga; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
-/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 
 
 var _marked =
@@ -2363,13 +2363,14 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(a
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchAddComment),
     _marked3 =
 /*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(addPost),
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchAddPost),
     _marked4 =
 /*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchAddPost),
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(addPost),
     _marked5 =
 /*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(postSaga);
+
 
 
 
@@ -2383,12 +2384,12 @@ function addComment(action) {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["delay"])(2000);
 
         case 3:
           _context.next = 5;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_SUCCESS"],
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
+            type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_COMMENT_SUCCESS"],
             data: {
               postId: action.data.postId // 이 곳의 액션은 PostCard의 ADD_COMMENT_REQUEST을 처리하는 부분에서 dispatch로 받을 수도 있음
 
@@ -2403,8 +2404,8 @@ function addComment(action) {
           _context.prev = 7;
           _context.t0 = _context["catch"](0);
           _context.next = 11;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_FAILURE"],
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
+            type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_COMMENT_FAILURE"],
             error: _context.t0
           });
 
@@ -2422,7 +2423,7 @@ function watchAddComment() {
       switch (_context2.prev = _context2.next) {
         case 0:
           _context2.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_REQUEST"], addComment);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_COMMENT_REQUEST"], addComment);
 
         case 2:
         case "end":
@@ -2432,58 +2433,65 @@ function watchAddComment() {
   }, _marked2);
 }
 
-function addPostAPI() {}
-
-function addPost() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function addPost$(_context3) {
+function watchAddPost() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchAddPost$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
-          _context3.prev = 0;
-          _context3.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
+          _context3.next = 2;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_POST_REQUEST"], addPost);
 
-        case 3:
-          _context3.next = 5;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_SUCCESS"]
-          });
-
-        case 5:
-          _context3.next = 11;
-          break;
-
-        case 7:
-          _context3.prev = 7;
-          _context3.t0 = _context3["catch"](0);
-          _context3.next = 11;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_FAILURE"],
-            error: _context3.t0
-          });
-
-        case 11:
+        case 2:
         case "end":
           return _context3.stop();
       }
     }
-  }, _marked3, null, [[0, 7]]);
+  }, _marked3);
 }
 
-function watchAddPost() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchAddPost$(_context4) {
+function addPostAPI(postData) {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/post", postData, {
+    withCredentials: true
+  });
+}
+
+function addPost(action) {
+  var result;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function addPost$(_context4) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
-          _context4.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"], addPost);
+          _context4.prev = 0;
+          _context4.next = 3;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["call"])(addPostAPI, action.data);
 
-        case 2:
+        case 3:
+          result = _context4.sent;
+          _context4.next = 6;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
+            type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_POST_SUCCESS"],
+            data: result.data
+          });
+
+        case 6:
+          _context4.next = 12;
+          break;
+
+        case 8:
+          _context4.prev = 8;
+          _context4.t0 = _context4["catch"](0);
+          _context4.next = 12;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
+            type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_POST_FAILURE"],
+            error: _context4.t0
+          });
+
+        case 12:
         case "end":
           return _context4.stop();
       }
     }
-  }, _marked4);
+  }, _marked4, null, [[0, 8]]);
 }
 
 function postSaga() {
@@ -2492,7 +2500,7 @@ function postSaga() {
       switch (_context5.prev = _context5.next) {
         case 0:
           _context5.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchAddComment)]);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["fork"])(watchAddComment)]);
 
         case 2:
         case "end":
@@ -2516,11 +2524,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return userSaga; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
-/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
 
 
 var _marked =
@@ -2554,7 +2562,6 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(u
 
 
 
-axios__WEBPACK_IMPORTED_MODULE_3___default.a.defaults.baseURL = "http://localhost:3065/api/";
 
 function watchLogIn() {
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchLogIn$(_context) {
@@ -2562,7 +2569,7 @@ function watchLogIn() {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_REQUEST"], logIn);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOG_IN_REQUEST"], logIn);
 
         case 2:
         case "end":
@@ -2573,7 +2580,7 @@ function watchLogIn() {
 }
 
 function logInAPI(logInData) {
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/logIn", logInData, {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/user/logIn", logInData, {
     withCredentials: true // 3번째 인자로 이걸 명시해줘야 쿠키를 주고받을 수 있게 됨.
 
   });
@@ -2587,14 +2594,14 @@ function logIn(action) {
         case 0:
           _context2.prev = 0;
           _context2.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(logInAPI, action.data);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["call"])(logInAPI, action.data);
 
         case 3:
           result = _context2.sent;
           _context2.next = 6;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
             //put은 dispatch와 동일
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"],
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOG_IN_SUCCESS"],
             data: result.data
           });
 
@@ -2609,8 +2616,8 @@ function logIn(action) {
           // eslint-disable-next-line no-console
           console.log(_context2.t0);
           _context2.next = 13;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"]
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOG_IN_FAILURE"]
           });
 
         case 13:
@@ -2627,7 +2634,7 @@ function watchLogOut() {
       switch (_context3.prev = _context3.next) {
         case 0:
           _context3.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_OUT_REQUEST"], logOut);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOG_OUT_REQUEST"], logOut);
 
         case 2:
         case "end":
@@ -2639,7 +2646,7 @@ function watchLogOut() {
 
 function logOutAPI() {
   // axios가 서버에 요청을 보냄
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/logOut", {}, {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/user/logOut", {}, {
     withCredentials: true
   });
 }
@@ -2651,12 +2658,12 @@ function logOut() {
         case 0:
           _context4.prev = 0;
           _context4.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(logOutAPI);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["call"])(logOutAPI);
 
         case 3:
           _context4.next = 5;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_OUT_SUCCESS"]
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOG_OUT_SUCCESS"]
           });
 
         case 5:
@@ -2681,7 +2688,7 @@ function watchSignUp() {
       switch (_context5.prev = _context5.next) {
         case 0:
           _context5.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"], signUp);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_3__["SIGN_UP_REQUEST"], signUp);
 
         case 2:
         case "end":
@@ -2693,7 +2700,7 @@ function watchSignUp() {
 
 function signUpAPI(signUpData) {
   // axios가 서버에 요청을 보냄
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user", signUpData);
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/user", signUpData);
 }
 
 function signUp(action) {
@@ -2703,13 +2710,13 @@ function signUp(action) {
         case 0:
           _context6.prev = 0;
           _context6.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(signUpAPI, action.data);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["call"])(signUpAPI, action.data);
 
         case 3:
           _context6.next = 5;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
             //put은 dispatch와 동일
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_SUCCESS"]
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["SIGN_UP_SUCCESS"]
           });
 
         case 5:
@@ -2723,8 +2730,8 @@ function signUp(action) {
           // eslint-disable-next-line no-console
           console.log(_context6.t0);
           _context6.next = 12;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_FAILURE"],
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["SIGN_UP_FAILURE"],
             error: _context6.t0
           });
 
@@ -2742,7 +2749,7 @@ function watchLoadUser() {
       switch (_context7.prev = _context7.next) {
         case 0:
           _context7.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOAD_USER_REQUEST"], loadUser);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOAD_USER_REQUEST"], loadUser);
 
         case 2:
         case "end":
@@ -2754,7 +2761,7 @@ function watchLoadUser() {
 
 function loadUserAPI() {
   // axios가 서버에 요청을 보냄
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/user", {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/user", {
     withCredentials: true
   });
 }
@@ -2767,14 +2774,14 @@ function loadUser() {
         case 0:
           _context8.prev = 0;
           _context8.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(loadUserAPI);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["call"])(loadUserAPI);
 
         case 3:
           result = _context8.sent;
           _context8.next = 6;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
             //put은 dispatch와 동일
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOAD_USER_SUCCESS"],
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOAD_USER_SUCCESS"],
             data: result.data
           });
 
@@ -2789,8 +2796,8 @@ function loadUser() {
           // eslint-disable-next-line no-console
           console.log(_context8.t0);
           _context8.next = 13;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOAD_USER_FAILURE"],
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["put"])({
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOAD_USER_FAILURE"],
             error: _context8.t0
           });
 
@@ -2808,7 +2815,7 @@ function userSaga() {
       switch (_context9.prev = _context9.next) {
         case 0:
           _context9.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogIn), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLogOut), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchLoadUser), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchSignUp)]);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["fork"])(watchLogIn), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["fork"])(watchLogOut), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["fork"])(watchLoadUser), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_2__["fork"])(watchSignUp)]);
 
         case 2:
         case "end":
