@@ -11,16 +11,22 @@ const PostForm = () => {
   );
 
   useEffect(() => {
-    setText("");
-  }, [postAdded === true]);
+    if (postAdded) {
+      setText("");
+    }
+  }, [postAdded]);
 
   const onSubmitForm = useCallback(
     e => {
       e.preventDefault();
+      if (!text || !text.trim()) {
+        // 문자열 양쪽 공백제거
+        return alert("게시글을 작성하세요");
+      }
       dispatch({
         type: ADD_POST_REQUEST,
         data: {
-          content: text
+          content: text.trim()
         }
       });
     },
@@ -40,6 +46,8 @@ const PostForm = () => {
       <Input.TextArea
         maxLength={140}
         placeholder="어떤 신기한 일이 있었나요?"
+        value={text}
+        onChange={onChangeText}
       />
       <div>
         <input type="file" multiple hidden />
@@ -50,7 +58,7 @@ const PostForm = () => {
           loading={isAddingPost}
           htmlType="submit"
         >
-          짹짹
+          SUBMIT
         </Button>
       </div>
       <div>

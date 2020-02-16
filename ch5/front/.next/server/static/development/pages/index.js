@@ -154,7 +154,7 @@ var PostCard = function PostCard(_ref) {
     e.preventDefault();
 
     if (!me) {
-      return alert("로그인이 필요합니다.");
+      return alert("로그인이 필요로합니다.");
     }
 
     return dispatch({
@@ -321,7 +321,7 @@ PostCard.propTypes = {
     User: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
     content: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
     img: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
-    createdAt: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object
+    createdAt: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string
   })
 };
 /* harmony default export */ __webpack_exports__["default"] = (PostCard);
@@ -368,14 +368,22 @@ var PostForm = function PostForm() {
       postAdded = _useSelector.postAdded;
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    setText("");
-  }, [postAdded === true]);
+    if (postAdded) {
+      setText("");
+    }
+  }, [postAdded]);
   var onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (e) {
     e.preventDefault();
+
+    if (!text || !text.trim()) {
+      // 문자열 양쪽 공백제거
+      return alert("게시글을 작성하세요");
+    }
+
     dispatch({
       type: _reducers_post__WEBPACK_IMPORTED_MODULE_4__["ADD_POST_REQUEST"],
       data: {
-        content: text
+        content: text.trim()
       }
     });
   }, [text]);
@@ -390,21 +398,23 @@ var PostForm = function PostForm() {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 41
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"].TextArea, {
     maxLength: 140,
     placeholder: "\uC5B4\uB5A4 \uC2E0\uAE30\uD55C \uC77C\uC774 \uC788\uC5C8\uB098\uC694?",
+    value: text,
+    onChange: onChangeText,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 46
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 52
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -413,13 +423,13 @@ var PostForm = function PostForm() {
     hidden: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 53
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 54
     },
     __self: this
   }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -431,13 +441,13 @@ var PostForm = function PostForm() {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 55
     },
     __self: this
-  }, "\uC9F9\uC9F9")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "SUBMIT")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 64
     },
     __self: this
   }, imagePaths.map(function (v) {
@@ -448,7 +458,7 @@ var PostForm = function PostForm() {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 67
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -459,19 +469,19 @@ var PostForm = function PostForm() {
       alt: v,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 68
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 73
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 74
       },
       __self: this
     }, "\uC81C\uAC70")));
@@ -841,7 +851,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PostCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/PostCard */ "./components/PostCard.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 var _jsxFileName = "/root/wsl_projects/react-sns/ch5/front/pages/index.js";
+
 
 
 
@@ -859,17 +871,21 @@ var Home = function Home() {
       mainPosts = _useSelector2.mainPosts;
 
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {}, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    dispatch({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_4__["LOAD_MAIN_POSTS_REQUEST"]
+    });
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 19
     },
     __self: this
   }, me && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 20
     },
     __self: this
   }), mainPosts.map(function (c) {
@@ -878,7 +894,7 @@ var Home = function Home() {
       post: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 22
       },
       __self: this
     });
@@ -1070,6 +1086,25 @@ var REMOVE_POST_FAILURE = "REMOVE_POST_FAILURE";
           isAddingComment: false,
           addCommentErrorReason: action.error
         });
+      }
+
+    case LOAD_MAIN_POSTS_REQUEST:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
+          mainPosts: []
+        });
+      }
+
+    case LOAD_MAIN_POSTS_SUCCESS:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
+          mainPosts: action.data
+        });
+      }
+
+    case LOAD_MAIN_POSTS_FAILURE:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state);
       }
 
     default:

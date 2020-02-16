@@ -3,13 +3,13 @@ const router = express.Router();
 
 const db = require("../models");
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
   // POST /api/post
   try {
     const hashtags = req.body.content.match(/#[^\s]+/g);
     const newPost = await db.Post.create({
       content: req.body.content,
-      userId: req.user.id
+      UserId: req.user.id
     });
     if (hashtags) {
       const result = await Promise.all(

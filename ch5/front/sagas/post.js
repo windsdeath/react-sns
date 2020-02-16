@@ -6,8 +6,39 @@ import {
   ADD_POST_FAILURE,
   ADD_COMMENT_REQUEST,
   ADD_COMMENT_SUCCESS,
-  ADD_COMMENT_FAILURE
+  ADD_COMMENT_FAILURE,
+  LOAD_MAIN_POSTS_REQUEST,
+  LOAD_MAIN_POSTS_SUCCESS,
+  LOAD_MAIN_POSTS_FAILURE
 } from "../reducers/post";
+
+function* watchLoadMainPosts() {
+  yield takeLatest(LOAD_MAIN_POSTS_REQUEST, loadMainPosts);
+}
+
+function loadMainPostsAPI() {
+  return axios.get("/posts");
+}
+
+function* loadMainPosts() {
+  //여기에 들어가는 액션은 아래 watchAddComment의 takeLatest 첫번째 인자의 액션
+  try {
+    const result = yield call(loadMainPostsAPI);
+    yield put({
+      type: LOAD_MAIN_POSTS_SUCCESS,
+      data: result.data
+    });
+  } catch (e) {
+    yield put({
+      type: LOAD_MAIN_POSTS_FAILURE,
+      error: e
+    });
+  }
+}
+
+function* watchAddComment() {
+  yield takeLatest(ADD_COMMENT_REQUEST, addComment);
+}
 
 function addCommentAPI() {}
 
@@ -27,10 +58,6 @@ function* addComment(action) {
       error: e
     });
   }
-}
-
-function* watchAddComment() {
-  yield takeLatest(ADD_COMMENT_REQUEST, addComment);
 }
 
 function* watchAddPost() {
@@ -59,5 +86,9 @@ function* addPost(action) {
 }
 
 export default function* postSaga() {
-  yield all([fork(watchAddPost), fork(watchAddComment)]);
+  yield all([
+    fork(watchAddPost),
+    fork(watchLoadMainPosts),
+    fork(watchAddComment)
+  ]);
 }

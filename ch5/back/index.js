@@ -54,7 +54,7 @@ app.use(passport.session());
 // 라우터 미들웨어
 app.use("/api/user", userAPIRouter); // import한 routes/user.js의 api의 기본경로를 /api/user로 만들어주는 부분.
 app.use("/api/post", postAPIRouter);
-app.use("/api/posts", postAPIRouter);
+app.use("/api/posts", postsAPIRouter);
 
 // app.get('/', (req, res) => {
 //     res.send('Hello, server');

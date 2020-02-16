@@ -49,7 +49,6 @@ router.post("/login", (req, res, next) => {
   // POST /api/user/login
   passport.authenticate("local", (err, user, info) => {
     // err, user, info 는 local.js의 done(null, false , {reason:'비밀번호가 틀립니다.}) 부분.
-    console.log(err, user, info);
     if (err) {
       console.error(err);
       return next(err);

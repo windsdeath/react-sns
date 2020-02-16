@@ -19,7 +19,7 @@ const PostCard = ({ post }) => {
     e => {
       e.preventDefault();
       if (!me) {
-        return alert("로그인이 필요합니다.");
+        return alert("로그인이 필요로합니다.");
       }
       return dispatch({
         type: ADD_COMMENT_REQUEST,
@@ -98,7 +98,7 @@ PostCard.propTypes = {
     User: PropTypes.object,
     content: PropTypes.string,
     img: PropTypes.string,
-    createdAt: PropTypes.object
+    createdAt: PropTypes.string
   })
 };
 
