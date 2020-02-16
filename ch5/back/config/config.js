@@ -1,27 +1,27 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 
 dotenv.config();
 
-module.exports ={
+module.exports = {
   development: {
-    username: 'root',
+    username: "root",
     password: process.env.DB_PASSWORD,
-    database: 'reactsns',
-    host: '127.0.0.1',
-    dialect: 'mysql',
+    database: "reactsns",
+    host: "127.0.0.1",
+    dialect: "mysql"
   },
   test: {
-    username: 'root',
+    username: "root",
     password: process.env.DB_PASSWORD,
-    database: 'reactsns',
-    host: '127.0.0.1',
-    dialect: 'mysql',
+    database: "reactsns",
+    host: "127.0.0.1",
+    dialect: "mysql"
   },
   production: {
-    username: 'root',
+    username: "root",
     password: process.env.DB_PASSWORD,
-    database: 'reactsns',
-    host: '127.0.0.1',
-    dialect: 'mysql',
+    database: "reactsns",
+    host: "127.0.0.1",
+    dialect: "mysql"
   }
-}
+};

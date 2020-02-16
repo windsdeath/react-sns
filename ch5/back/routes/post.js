@@ -1,41 +1,30 @@
-const express = require("express");
+const express = require('express');
+const db = require('../models');
+
 const router = express.Router();
 
-const db = require("../models");
-
-router.post("/", async (req, res, next) => {
-  // POST /api/post
+router.post('/', async (req, res, next) => { // POST /api/post
   try {
     const hashtags = req.body.content.match(/#[^\s]+/g);
     const newPost = await db.Post.create({
-      content: req.body.content,
-      UserId: req.user.id
+      content: req.body.content, // ex) '제로초 파이팅 #구독 #좋아요 눌러주세요'
+      UserId: req.user.id,
     });
     if (hashtags) {
-      const result = await Promise.all(
-        hashtags.map(tag =>
-          db.Hashtag.findOrCreate({
-            //찾아서 없으면 넣는다.
-            where: {
-              name: tag.slice(1).toLowerCase()
-            }
-          })
-        )
-      );
+      const result = await Promise.all(hashtags.map(tag => db.Hashtag.findOrCreate({
+        where: { name: tag.slice(1).toLowerCase() },
+      })));
       console.log(result);
       await newPost.addHashtags(result.map(r => r[0]));
     }
-    // 아래와 같음 이렇게도 표현가능
     // const User = await newPost.getUser();
-    // newPost.User =User;
+    // newPost.User = User;
     // res.json(newPost);
     const fullPost = await db.Post.findOne({
-      whrer: { id: newPost.id },
-      include: [
-        {
-          model: db.User
-        }
-      ]
+      where: { id: newPost.id },
+      include: [{
+        model: db.User,
+      }],
     });
     res.json(fullPost);
   } catch (e) {
@@ -43,6 +32,9 @@ router.post("/", async (req, res, next) => {
     next(e);
   }
 });
-router.post("/images", (req, res) => {});
+
+router.post('/images', (req, res) => {
+
+});
 
 module.exports = router;

@@ -1,69 +1,48 @@
-const express = require("express");
-// 요청에 대한 로그를 남겨줌
-const morgan = require("morgan");
-const cors = require("cors");
-const cookieParser = require("cookie-parser");
-const expressSession = require("express-session");
-const dotenv = require("dotenv");
-const passport = require("passport");
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const expressSession = require('express-session');
+const dotenv = require('dotenv');
+const passport = require('passport');
 
-const passportConfig = require("./passport");
-const db = require("./models");
-const userAPIRouter = require("./routes/user");
-const postAPIRouter = require("./routes/post");
-const postsAPIRouter = require("./routes/posts");
+const passportConfig = require('./passport');
+const db = require('./models');
+const userAPIRouter = require('./routes/user');
+const postAPIRouter = require('./routes/post');
+const postsAPIRouter = require('./routes/posts');
 
 dotenv.config();
 const app = express();
 db.sequelize.sync();
 passportConfig();
 
-// 아래 두줄을 넣어줘야 라우터에서 whrer{req.body.userId,} 이런 형식으로 받을 수 있음.
-app.use("/", express.json()); // json 본문처리 '/' <- 생략가능
-app.use(express.urlencoded({ extended: true })); // form 본문처리
-// 요청에 대한 로그를 남겨줌
-app.use(morgan("dev"));
-// 브라우저에서 다른경로 ex) localhot:3000와 localhost:3065 끼리의 요청을 막기때문에 cors를 설치해줘야함
-app.use(
-  cors({
-    origin: true, // 요청주소와 같게
-    credentials: true // cors에서 axios에서 둘다 해야함
-  })
-);
-// 프론트는 세션을 조회할수 있는 쿠키를 전달(쿠키를 알아서 파싱)
-app.use(cookieParser(process.env.COOKIE_SECRET)); // 시크릿 키! 세션과 같은값
-// 사용자 정보는 서버의 세션에(세션 사용가능)
-app.use(
-  expressSession({
-    //매번 세션 강제저장
-    resave: false,
-    // 빈 값도 저장
-    saveUninitialized: false,
-    // 시크릿 키! 쿠키파서에 도 같은값을넣어줌
-    secret: process.env.COOKIE_SECRET,
-    cookie: {
-      httpOnly: true, // 자바스크립트에서 쿠키에 접근 못하게함.(보안, true 설정이 좋음)
-      secure: false // https를 쓸때 트루로 해야함
-    },
-    name: "sipooe" // 임의의 쿠키이름을 설정하는것이 보안에 더 도움이 됨.
-  })
-);
-app.use(passport.initialize()); // 패스포트는 세션 미들웨어 아래쪽에 써줘야함 ! 세션의 일부를 사용하기때문.
+app.use(morgan('dev'));
+app.use(cors({
+  origin: true,
+  credentials: true,
+}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(expressSession({
+  resave: false,
+  saveUninitialized: false,
+  secret: process.env.COOKIE_SECRET,
+  cookie: {
+    httpOnly: true,
+    secure: false, // https를 쓸 때 true
+  },
+  name: 'rnbck',
+}));
+app.use(passport.initialize());
 app.use(passport.session());
 
-// 라우터 미들웨어
-app.use("/api/user", userAPIRouter); // import한 routes/user.js의 api의 기본경로를 /api/user로 만들어주는 부분.
-app.use("/api/post", postAPIRouter);
-app.use("/api/posts", postsAPIRouter);
-
-// app.get('/', (req, res) => {
-//     res.send('Hello, server');
-// });
-
-// app.get('/about', (req, res) => {
-//     res.send('Hello, about');
-// });
+// API는 다른 서비스가 내 서비스의 기능을 실행할 수 있게 열어둔 창구
+app.use('/api/user', userAPIRouter);
+app.use('/api/post', postAPIRouter);
+app.use('/api/posts', postsAPIRouter);
 
 app.listen(3065, () => {
-  console.log("server is running on localhost:3065");
+  console.log('server is running on http://localhost:3065');
 });
