@@ -1,20 +1,29 @@
-import React from 'react'
-import {appDummy} from '../components/AppLayout';
+import { Avatar, Card } from 'antd';
+import React from 'react';
 
-const userProfile = () => {
-    return (
-        <Card actions={[
-            <div key="twit">포스트<br />{appDummy.Post.length}</div>,
-            <div key="following">팔로윙<br />{appDummy.Follwings.length}</div>,
-            <div key="follower">팔로워<br />{appDummy.Followers.length}</div>,
-        ]}
+const dummy = {
+  nickname: 'SIPO',
+  Post: [],
+  Followings: [],
+  Followers: [],
+  isLoggedIn: false,
+};
+
+const UserProfile = () => {
+  return (
+    <Card
+      actions={[
+        <div key="twit">짹짹<br />{dummy.Post.length}</div>,
+        <div key="following">팔로잉<br />{dummy.Followings.length}</div>,
+        <div key="follower">팔로워<br />{dummy.Followers.length}</div>,
+      ]}
     >
-        <Card.Meta
-        avatar={<Avatar>{appDummy.nickname[0]}</Avatar>}
-        title={appDummy.nickname}
-        />
+      <Card.Meta
+        avatar={<Avatar>{dummy.nickname[0]}</Avatar>}
+        title={dummy.nickname}
+      />
     </Card>
-    )
-    }
+  );
+};
 
-export default userProfile;
+export default UserProfile;
