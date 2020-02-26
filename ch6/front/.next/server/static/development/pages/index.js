@@ -254,7 +254,7 @@ var PostCard = function PostCard(_ref) {
     }, post.content.split(/(#[^\s]+)/g).map(function (v) {
       if (v.match(/#[^\s]+/)) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-          href: "/hashtag",
+          href: "/hashtag/".concat(v.slice(1)),
           key: v,
           __source: {
             fileName: _jsxFileName,
