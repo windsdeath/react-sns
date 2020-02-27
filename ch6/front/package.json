@@ -1,18 +1,23 @@
 {
-  "name": "react-nodebird-front",
+  "name": "react-nodesns-front",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon",
     "build": "next build",
     "start": "next start"
   },
-  "author": "ZeroCho",
+  "author": "SIPO",
   "license": "MIT",
   "dependencies": {
     "antd": "^3.26.11",
     "axios": "^0.18.1",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "morgan": "^1.9.1",
     "next": "^8.1.0",
     "next-redux-wrapper": "^3.0.0",
     "prop-types": "^15.7.2",
