@@ -28,18 +28,18 @@ const User = ({ id }) => (
           <div key="twit">
             트윗
             <br />
-            {userInfo.Post}
-          </div>
+            {userInfo.Posts}
+          </div>,
           <div key="following">
             팔로잉
             <br />
           {userInfo.Followings}
-          </div>
+          </div>,
           <div key="follower">
             팔로워
             <br />
           {userInfo.Followers}
-          </div>
+          </div>,
         ]}
       >
         <Card.Meta 

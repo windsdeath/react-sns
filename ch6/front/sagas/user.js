@@ -15,6 +15,7 @@ import {
   SIGN_UP_SUCCESS,
 } from '../reducers/user';
 
+
 function logInAPI(loginData) {
   // 서버에 요청을 보내는 부분
   return axios.post('/user/login', loginData, {
@@ -93,20 +94,21 @@ function* watchLogOut() {
   yield takeEvery(LOG_OUT_REQUEST, logOut);
 }
 
-function loadUserAPI() {
+function loadUserAPI(userId) {
   // 서버에 요청을 보내는 부분
-  return axios.get('/user/', {
+  return axios.get(userId ? `/user/${userId}` : '/user/', {
     withCredentials: true,
   });
 }
 
-function* loadUser() {
+function* loadUser(action) {
   try {
     // yield call(loadUserAPI);
-    const result = yield call(loadUserAPI);
+    const result = yield call(loadUserAPI, action.data);
     yield put({ // put은 dispatch 동일
       type: LOAD_USER_SUCCESS,
       data: result.data,
+      me: !action.data,
     });
   } catch (e) { // loginAPI 실패
     console.error(e);
